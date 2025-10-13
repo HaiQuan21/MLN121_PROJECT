@@ -11,6 +11,10 @@
     "typecheck": "tsc --noEmit -p tsconfig.app.json"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@mlc-ai/web-llm": "^0.2.79",
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-progress": "^1.1.7",
     "@supabase/supabase-js": "^2.57.4",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.24",

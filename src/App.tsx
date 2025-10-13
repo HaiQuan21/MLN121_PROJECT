@@ -6,8 +6,9 @@ import HomePage from './pages/HomePage';
 import HistoryPage from './pages/HistoryPage';
 import DigitalPage from './pages/DigitalPage';
 import BitcoinPage from './pages/BitcoinPage';
+import SpecialGoodsPage from './pages/SpecialGoodsPage';
 import FuturePage from './pages/FuturePage';
-import InteractPage from './pages/InteractPage';
+import MinigamePage from './pages/MinigamePage';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -22,10 +23,12 @@ export default function App() {
         return <DigitalPage />;
       case 'bitcoin':
         return <BitcoinPage />;
+      case 'special-goods':
+        return <SpecialGoodsPage />;
       case 'future':
         return <FuturePage />;
-      case 'interact':
-        return <InteractPage />;
+      case 'minigame':
+        return <MinigamePage />;
       default:
         return <HomePage onNavigate={setCurrentPage} />;
     }

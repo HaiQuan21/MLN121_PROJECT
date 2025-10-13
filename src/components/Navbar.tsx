@@ -12,8 +12,9 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
     { id: 'history', label: 'Lịch sử' },
     { id: 'digital', label: 'Tiền số hóa' },
     { id: 'bitcoin', label: 'Câu chuyện Bitcoin' },
+    { id: 'special-goods', label: 'Hàng hóa đặc biệt' },
     { id: 'future', label: 'Tương lai' },
-    { id: 'interact', label: 'Tương tác' },
+    { id: 'minigame', label: 'Minigame' },
   ];
 
   return (

@@ -58,7 +58,6 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ delay: idx * 0.2 + 0.3, duration: 0.3 }}
-                  className="hidden md:block absolute w-16 h-1 bg-gradient-to-r from-amber-400 to-blue-400"
                   style={{ left: `${(idx + 1) * 140}px` }}
                 />
               )}
