@@ -4,6 +4,18 @@ import { useRef } from 'react';
 
 const timelineData = [
   {
+    year: '9000 TCN',
+    title: 'Nền kinh tế tặng vật & hàng đổi hàng',
+    desc: 'Lúc này chưa có tiền, con người trao đổi hàng hóa trực tiếp: ví dụ đổi thịt lấy công cụ. Đây được coi là hình thức giao dịch sớm nhất trong lịch sử loài người.',
+    image: '🔄',
+  },
+  {
+    year: '1100 TCN',
+    title: 'Tiền hàng hóa ở Trung Quốc',
+    desc: 'Người Trung Quốc dùng mô hình thu nhỏ của các vật phẩm (như dao, công cụ) làm tiền. Tuy nhiên, loại "tiền" này khá bất tiện và thậm chí có thể gây nguy hiểm (ví dụ: dao nhỏ bằng kim loại).',
+    image: '🔪',
+  },
+  {
     year: '1200 TCN',
     title: 'Vỏ sò Cowrie',
     desc: 'Châu Phi và Châu Á sử dụng vỏ sò làm tiền tệ, một trong những hình thức tiền tệ sớm nhất.',
