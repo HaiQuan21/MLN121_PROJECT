@@ -8,7 +8,7 @@ const timelineData = [
     title: 'Nền kinh tế tặng vật & hàng đổi hàng',
     desc: 'Lúc này chưa có tiền, con người trao đổi hàng hóa trực tiếp: ví dụ đổi thịt lấy công cụ. Đây được coi là hình thức giao dịch sớm nhất trong lịch sử loài người.',
     image: '🔄',
-    detailedImage: '/dist/assets/trao_doi_hang_hoa.jpg',
+    detailedImage: '/assets/trao_doi_hang_hoa.jpg',
     detailedInfo: 'Trước khi có tiền tệ, các xã hội săn bậc hái lượm và nông nghiệp sơ khai sử dụng hệ thống trao đổi trực tiếp (barter) hoặc tặng vật (gift economy). Ví dụ, đổi thịt lấy công cụ, hạt giống lấy da thú, hoặc tặng quà để xây dựng mối quan hệ xã hội và liên minh bộ lạc. Điều này bắt đầu phổ biến sau khi con người thuần hóa gia súc và trồng trọt khoảng 9000-6000 TCN, giúp tạo dư thừa hàng hóa để trao đổi. Hệ thống này đơn giản nhưng bất tiện vì cần sự trùng hợp nhu cầu (muốn đổi đúng thứ đối phương có), và vẫn tồn tại ở một số cộng đồng ngày nay.',
     source: 'Minh họa trao đổi hàng hóa và quà tặng ở thời kỳ đồ đá mới',
     sourceUrl: 'https://en.wikipedia.org/wiki/History_of_money'
@@ -18,7 +18,7 @@ const timelineData = [
     title: 'Tiền hàng hóa ở Trung Quốc',
     desc: 'Người Trung Quốc dùng mô hình thu nhỏ của các vật phẩm (như dao, công cụ) làm tiền. Tuy nhiên, loại "tiền" này khá bất tiện và thậm chí có thể gây nguy hiểm (ví dụ: dao nhỏ bằng kim loại).',
     image: '🔪',
-    detailedImage: '/dist/assets/tien_hang_hoa_o_Trung_Quoc.jpg',
+    detailedImage: '/assets/tien_hang_hoa_o_Trung_Quoc.jpg',
     detailedInfo: 'Ở Trung Quốc cổ đại, tiền hàng hóa (commodity money) được sử dụng dưới dạng mô hình thu nhỏ của công cụ như dao (knife money) hoặc xẻng (spade money), đúc từ đồng thanh. Những "đồng tiền" này xuất hiện khoảng 1200-1100 TCN, chủ yếu ở các vương quốc như Yên (Yan) và Tề (Qi), dùng để trao đổi hàng hóa thay vì công cụ thực tế. Chúng bất tiện vì nặng nề, dễ gãy và thậm chí nguy hiểm (có lưỡi sắc), nhưng đánh dấu bước chuyển từ barter sang tiền tệ có giá trị nội tại. Loại tiền này phổ biến đến thời Chiến Quốc (475-221 TCN) trước khi bị thay thế bởi tiền tròn lỗ vuông.',
     source: 'Tiền dao đồng cổ Trung Quốc từ khoảng 1100 TCN',
     sourceUrl: 'https://learn.apmex.com/answers/what-is-chinese-knife-money/'
@@ -28,7 +28,7 @@ const timelineData = [
     title: 'Vỏ sò Cowrie',
     desc: 'Châu Phi và Châu Á sử dụng vỏ sò làm tiền tệ, một trong những hình thức tiền tệ sớm nhất.',
     image: '🐚',
-    detailedImage: '/dist/assets/Tien_vo_so.jpg',
+    detailedImage: '/assets/Tien_vo_so.jpg',
     detailedInfo: 'Vỏ sò cowrie (từ Ấn Độ Dương và Thái Bình Dương) được sử dụng làm tiền tệ ở Châu Phi, Châu Á và một số khu vực khác do tính bền vững và dễ mang theo. Đây là một trong những hình thức tiền tệ sớm nhất, dùng trong trao đổi hàng hóa và thậm chí là biểu tượng địa vị xã hội. Chúng lan rộng qua thương mại và vẫn được dùng ở một số nơi đến thế kỷ 20.',
     source: 'Vỏ sò cowrie cổ đại dùng làm tiền tệ',
     sourceUrl: 'https://nmaahc.si.edu/cowrie-shells-and-trade-power'
@@ -38,7 +38,7 @@ const timelineData = [
     title: 'Tiền xu vàng và bạc',
     desc: 'Vương quốc Lydia (Thổ Nhĩ Kỳ ngày nay) đúc tiền xu kim loại đầu tiên.',
     image: '💰',
-    detailedImage: '/dist/assets/tien_xu_co_dai.jpg',
+    detailedImage: '/assets/tien_xu_co_dai.jpg',
     detailedInfo: 'Vương quốc Lydia (nay là Thổ Nhĩ Kỳ) đúc tiền xu kim loại đầu tiên từ electrum (hợp kim vàng-bạc), đánh dấu sự chuyển đổi từ hàng hóa sang tiền tệ chuẩn hóa. Đồng xu được dập hình sư tử và giúp thúc đẩy thương mại. Ý tưởng này nhanh chóng lan sang Hy Lạp và Ba Tư.',
     source: 'Đồng xu Lydia đầu tiên từ khoảng 600 TCN',
     sourceUrl: 'https://www.egypttoday.com/Article/4/113533/The-first-currency-in-history-Kingdom-of-Lydia-minted-gold'
@@ -48,7 +48,7 @@ const timelineData = [
     title: 'Đế chế La Mã',
     desc: 'Đồng Denarius trở thành tiền tệ chuẩn của đế chế, lưu hành rộng rãi.',
     image: '🏛️',
-    detailedImage: '/dist/assets/de_che_la_ma_dong_denarius.jpg',
+    detailedImage: '/assets/de_che_la_ma_dong_denarius.jpg',
     detailedInfo: 'Đồng denarius (bạc) trở thành tiền tệ chuẩn của Đế chế La Mã từ thế kỷ 3 TCN, nhưng phổ biến rộng rãi vào khoảng 100 TCN. Nó được dùng cho thương mại, thuế và quân sự, với hệ thống tiền tệ bao gồm vàng, bạc và đồng. Denarius thường in hình hoàng đế và được lưu hành khắp châu Âu, Trung Đông.',
     source: 'Đồng Denarius La Mã cổ đại',
     sourceUrl: 'https://learn.apmex.com/learning-guide/history/what-is-a-denarius/'
@@ -58,7 +58,7 @@ const timelineData = [
     title: 'Tiền giấy đầu tiên',
     desc: 'Trung Quốc nhà Tống phát minh tiền giấy để thuận tiện trong thương mại.',
     image: '📜',
-    detailedImage: '/dist/assets/tien_giay_dau_tien.jpg',
+    detailedImage: '/assets/tien_giay_dau_tien.jpg',
     detailedInfo: 'Trung Quốc dưới triều Tống phát minh tiền giấy (jiaozi) khoảng năm 960-1024 để thay thế đồng xu nặng nề, do thiếu đồng. Đây là tiền giấy chính thức đầu tiên, in trên giấy từ vỏ cây dâu và có giá trị bảo đảm bằng kim loại. Nó giúp thương mại phát triển nhưng cũng dẫn đến lạm phát nếu in.',
     source: 'Tiền giấy nhà Tống (Jiaozi)',
     sourceUrl: 'https://historyofinformation.com/detail.php?entryid=242'
@@ -68,7 +68,7 @@ const timelineData = [
     title: 'Tiền giấy Châu Âu',
     desc: 'Thụy Điển phát hành tiền giấy đầu tiên ở Châu Âu qua Stockholms Banco.',
     image: '🏦',
-    detailedImage: '/dist/assets/tien_giay_chau_au.jpg',
+    detailedImage: '/assets/tien_giay_chau_au.jpg',
     detailedInfo: 'Thụy Điển phát hành tiền giấy đầu tiên ở châu Âu qua Stockholms Banco năm 1661, thay thế tấm đồng nặng. Tuy nhiên, ngân hàng phá sản năm 1664 do không đủ dự trữ. Đây là bước đầu cho tiền giấy châu Âu, sau đó lan rộng với Ngân hàng Anh năm 1694.',
     source: 'Tiền giấy Stockholms Banco năm 1661',
     sourceUrl: 'https://www.riksbank.se/en-gb/about-the-riksbank/history/historical-timeline/1600-1699/first-banknotes-in-europe/'
@@ -78,7 +78,7 @@ const timelineData = [
     title: 'Thẻ tín dụng',
     desc: 'Diners Club ra mắt thẻ tín dụng đầu tiên, mở đầu kỷ nguyên thanh toán không dùng tiền mặt.',
     image: '💳',
-    detailedImage: '/dist/assets/the_tin_dung.jpg',
+    detailedImage: '/assets/the_tin_dung.jpg',
     detailedInfo: 'Diners Club ra mắt thẻ tín dụng đầu tiên năm 1950 tại Mỹ, ban đầu dùng cho nhà hàng. Nó mở ra kỷ nguyên thanh toán không tiền mặt, sau đó là American Express (1958) và Visa/Mastercard. Thẻ tín dụng trở thành phổ biến toàn cầu vào cuối thế kỷ 20.',
     source: 'Thẻ Diners Club đầu tiên năm 1950',
     sourceUrl: 'https://www.saturdayeveningpost.com/2016/04/day-cash-died/'
@@ -88,7 +88,7 @@ const timelineData = [
     title: 'Bitcoin ra đời',
     desc: 'Satoshi Nakamoto tạo ra Bitcoin, tiền điện tử đầu tiên dựa trên blockchain.',
     image: '₿',
-    detailedImage: '/dist/assets/Bitcoin.png',
+    detailedImage: '/assets/Bitcoin.png',
     detailedInfo: 'Satoshi Nakamoto (bí danh) tạo ra Bitcoin năm 2009, tiền điện tử đầu tiên dựa trên blockchain – một sổ cái phân tán không cần trung ương. Nó giải quyết vấn đề chi tiêu kép và mở đường cho hàng ngàn tiền điện tử khác.',
     source: 'Biểu tượng Bitcoin và blockchain',
     sourceUrl: 'https://money.usnews.com/investing/articles/the-history-of-bitcoin'
@@ -98,7 +98,7 @@ const timelineData = [
     title: 'Kỷ nguyên CBDC',
     desc: 'Các ngân hàng trung ương bắt đầu phát triển tiền kỹ thuật số chính thức.',
     image: '🌐',
-    detailedImage: '/dist/assets/ki_nguyen_cdbc.jpg',
+    detailedImage: '/assets/ki_nguyen_cdbc.jpg',
     detailedInfo: 'Các ngân hàng trung ương bắt đầu phát triển Central Bank Digital Currency (CBDC) từ khoảng 2020, như e-CNY của Trung Quốc hay Sand Dollar của Bahamas. Đây là tiền kỹ thuật số chính thức, kết hợp lợi ích của tiền điện tử với sự kiểm soát của nhà nước. Đến năm 2025, nhiều quốc gia đang thử nghiệm, tập trung vào thanh toán nhanh và an toàn.',
     source: 'Khái niệm tiền kỹ thuật số ngân hàng trung ương (CBDC)',
     sourceUrl: 'https://www.eurofinance.com/news/future-of-finance-cbdcs-and-a-new-era-for-money-and-global-transactions/'

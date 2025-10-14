@@ -7,43 +7,43 @@ export default function BitcoinPage() {
       year: '2008', 
       event: 'Whitepaper Bitcoin', 
       desc: 'Satoshi Nakamoto công bố bản whitepaper "Bitcoin: A Peer-to-Peer Electronic Cash System", phác thảo cơ chế blockchain, chữ ký số, và mạng ngang hàng giúp chuyển tiền mà không cần trung gian. Đây là viên gạch nền móng cho toàn bộ kỷ nguyên tiền mã hoá.',
-      image: '/dist/assets/whitepaper_bitcoin.jpg'
+      image: '/assets/whitepaper_bitcoin.jpg'
     },
     { 
       year: '2009', 
       event: 'Genesis Block', 
       desc: 'Khối đầu tiên (Block 0) được khai thác với thông điệp "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks", vừa đánh dấu "giây phút khai sinh" Bitcoin, vừa là tuyên ngôn chống phụ thuộc vào hệ thống tài chính truyền thống.',
-      image: '/dist/assets/genesis_block.avif'
+      image: '/assets/genesis_block.avif'
     },
     { 
       year: '2010', 
       event: 'Bitcoin Pizza Day', 
       desc: 'Laszlo Hanyecz mua 2 pizza với 10.000 BTC – giao dịch "đổi hàng lấy hàng" nổi tiếng nhất lịch sử crypto. Sự kiện chứng minh Bitcoin có thể dùng như tiền thật, dù sau này giá trị số BTC đó trở nên "huyền thoại".',
-      image: '/dist/assets/bitcoin_pizza_day.jpg'
+      image: '/assets/bitcoin_pizza_day.jpg'
     },
     { 
       year: '2013', 
       event: 'Vượt $1,000', 
       desc: 'Chỉ sau vài năm, Bitcoin lần đầu vượt mốc 1.000 USD/BTC. Đây là cột mốc tâm lý lớn, đưa Bitcoin từ một "thử nghiệm công nghệ" thành một tài sản tài chính gây chú ý toàn cầu.',
-      image: '/dist/assets/bitcoin_over_1000.webp'
+      image: '/assets/bitcoin_over_1000.webp'
     },
     { 
       year: '2017', 
       event: 'Bùng nổ ICO', 
       desc: 'Phong trào ICO (phát hành token lần đầu) bùng nổ, hàng nghìn dự án gọi vốn trên nền tảng Ethereum và các mạng khác. Dù thúc đẩy đổi mới, giai đoạn này cũng đi kèm rủi ro và nhiều bài học về quản trị & pháp lý.',
-      image: '/dist/assets/bitcoin_ico_2017.jpg'
+      image: '/assets/bitcoin_ico_2017.jpg'
     },
     { 
       year: '2021', 
       event: 'ATH $69,000', 
       desc: 'Bitcoin đạt mức đỉnh lịch sử khoảng $69.000/BTC (11/2021), được hậu thuẫn bởi dòng tiền tổ chức, sản phẩm tài chính liên quan BTC, và làn sóng nhà đầu tư cá nhân. Đây là đỉnh chu kỳ tăng trưởng lớn của thập kỷ.',
-      image: '/dist/assets/ATH_$69,000.avif'
+      image: '/assets/ATH_$69,000.avif'
     },
     { 
       year: '03/2024', 
       event: 'ATH mới ~$73-74k', 
       desc: 'Tháng 3/2024, Bitcoin vượt đỉnh cũ 2021 và chạm vùng ~$73–74k lần đầu, được thúc đẩy bởi dòng tiền ETF và kỳ vọng halving. Đây là đỉnh quanh 13/03/2024.',
-      image: '/dist/assets/lap_dinh_lich_su_moi_ATH.png'
+      image: '/assets/lap_dinh_lich_su_moi_ATH.png'
     },
   ];
 
