@@ -3,38 +3,73 @@ import { TrendingUp, Users, Shield, Zap } from 'lucide-react';
 
 export default function BitcoinPage() {
   const milestones = [
-    { year: '2008', event: 'Whitepaper Bitcoin', desc: 'Satoshi Nakamoto công bố bản whitepaper "Bitcoin: A Peer-to-Peer Electronic Cash System"' },
-    { year: '2009', event: 'Genesis Block', desc: 'Block đầu tiên được khai thác, Bitcoin chính thức ra đời' },
-    { year: '2010', event: 'Giao dịch đầu tiên', desc: 'Laszlo Hanyecz mua 2 pizza với 10,000 BTC (trị giá ~$41)' },
-    { year: '2013', event: 'Vượt $1,000', desc: 'Bitcoin đạt mốc $1,000 lần đầu tiên' },
-    { year: '2017', event: 'Bùng nổ ICO', desc: 'Bitcoin tăng vọt lên gần $20,000, thu hút hàng triệu nhà đầu tư' },
-    { year: '2021', event: 'ATH $69,000', desc: 'Bitcoin đạt đỉnh lịch sử, các tổ chức lớn bắt đầu đầu tư' },
-    { year: '2024', event: 'Bitcoin ETF', desc: 'SEC Mỹ phê duyệt Bitcoin ETF, hợp pháp hóa đầu tư tổ chức' },
+    { 
+      year: '2008', 
+      event: 'Whitepaper Bitcoin', 
+      desc: 'Satoshi Nakamoto công bố bản whitepaper "Bitcoin: A Peer-to-Peer Electronic Cash System", phác thảo cơ chế blockchain, chữ ký số, và mạng ngang hàng giúp chuyển tiền mà không cần trung gian. Đây là viên gạch nền móng cho toàn bộ kỷ nguyên tiền mã hoá.',
+      image: '/dist/assets/whitepaper_bitcoin.jpg'
+    },
+    { 
+      year: '2009', 
+      event: 'Genesis Block', 
+      desc: 'Khối đầu tiên (Block 0) được khai thác với thông điệp "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks", vừa đánh dấu "giây phút khai sinh" Bitcoin, vừa là tuyên ngôn chống phụ thuộc vào hệ thống tài chính truyền thống.',
+      image: '/dist/assets/genesis_block.avif'
+    },
+    { 
+      year: '2010', 
+      event: 'Bitcoin Pizza Day', 
+      desc: 'Laszlo Hanyecz mua 2 pizza với 10.000 BTC – giao dịch "đổi hàng lấy hàng" nổi tiếng nhất lịch sử crypto. Sự kiện chứng minh Bitcoin có thể dùng như tiền thật, dù sau này giá trị số BTC đó trở nên "huyền thoại".',
+      image: '/dist/assets/bitcoin_pizza_day.jpg'
+    },
+    { 
+      year: '2013', 
+      event: 'Vượt $1,000', 
+      desc: 'Chỉ sau vài năm, Bitcoin lần đầu vượt mốc 1.000 USD/BTC. Đây là cột mốc tâm lý lớn, đưa Bitcoin từ một "thử nghiệm công nghệ" thành một tài sản tài chính gây chú ý toàn cầu.',
+      image: '/dist/assets/bitcoin_over_1000.webp'
+    },
+    { 
+      year: '2017', 
+      event: 'Bùng nổ ICO', 
+      desc: 'Phong trào ICO (phát hành token lần đầu) bùng nổ, hàng nghìn dự án gọi vốn trên nền tảng Ethereum và các mạng khác. Dù thúc đẩy đổi mới, giai đoạn này cũng đi kèm rủi ro và nhiều bài học về quản trị & pháp lý.',
+      image: '/dist/assets/bitcoin_ico_2017.jpg'
+    },
+    { 
+      year: '2021', 
+      event: 'ATH $69,000', 
+      desc: 'Bitcoin đạt mức đỉnh lịch sử khoảng $69.000/BTC (11/2021), được hậu thuẫn bởi dòng tiền tổ chức, sản phẩm tài chính liên quan BTC, và làn sóng nhà đầu tư cá nhân. Đây là đỉnh chu kỳ tăng trưởng lớn của thập kỷ.',
+      image: '/dist/assets/ATH_$69,000.avif'
+    },
+    { 
+      year: '03/2024', 
+      event: 'ATH mới ~$73-74k', 
+      desc: 'Tháng 3/2024, Bitcoin vượt đỉnh cũ 2021 và chạm vùng ~$73–74k lần đầu, được thúc đẩy bởi dòng tiền ETF và kỳ vọng halving. Đây là đỉnh quanh 13/03/2024.',
+      image: '/dist/assets/lap_dinh_lich_su_moi_ATH.png'
+    },
   ];
 
   const impacts = [
     {
       icon: TrendingUp,
       title: 'Tài sản số',
-      desc: 'Vốn hóa hơn $1.3 nghìn tỷ USD, trở thành lớp tài sản mới',
+      desc: 'Bitcoin mở ra lớp tài sản mới có tính khan hiếm số, giao dịch 24/7 và minh bạch on-chain; ngày càng được tổ chức tài chính tích hợp qua ETF, custodian, và sản phẩm phái sinh.',
       color: 'from-green-500 to-emerald-500',
     },
     {
       icon: Users,
       title: 'Tài chính phi tập trung',
-      desc: 'Không cần ngân hàng trung gian, người dùng kiểm soát tài sản',
+      desc: 'Không cần trung gian: người dùng tự nắm khóa ví, chuyển – nhận – thế chấp tài sản trên mạng lưới mở; giảm chi phí, tăng khả năng tiếp cận dịch vụ tài chính toàn cầu.',
       color: 'from-blue-500 to-cyan-500',
     },
     {
       icon: Shield,
       title: 'Bảo vệ khỏi lạm phát',
-      desc: 'Giới hạn 21 triệu BTC, không thể in thêm như tiền fiat',
+      desc: 'Nguồn cung giới hạn 21 triệu BTC và lịch trình phát hành cố định giúp Bitcoin đóng vai trò "vàng số", đa dạng hóa danh mục và phòng ngừa rủi ro tiền tệ dài hạn.',
       color: 'from-purple-500 to-pink-500',
     },
     {
       icon: Zap,
       title: 'Thanh toán toàn cầu',
-      desc: 'Chuyển tiền xuyên biên giới nhanh chóng, phí thấp',
+      desc: 'Chuyển tiền xuyên biên giới nhanh, phí thấp và không phụ thuộc giờ làm việc; các lớp mở rộng (Lightning, giải pháp L2) giúp vi thanh toán và thương mại quốc tế thuận tiện hơn.',
       color: 'from-orange-500 to-red-500',
     },
   ];
@@ -97,7 +132,19 @@ export default function BitcoinPage() {
                     >
                       <div className="text-orange-500 font-bold text-xl mb-2">{milestone.year}</div>
                       <h3 className="text-2xl font-bold text-slate-800 mb-2">{milestone.event}</h3>
-                      <p className="text-slate-600">{milestone.desc}</p>
+                      <p className="text-slate-600 mb-4">{milestone.desc}</p>
+                      {milestone.image && (
+                        <div className="mt-4">
+                          <img
+                            src={milestone.image}
+                            alt={milestone.event}
+                            className="w-full h-48 object-cover rounded-lg shadow-md"
+                            onError={(e) => {
+                              e.currentTarget.style.display = 'none';
+                            }}
+                          />
+                        </div>
+                      )}
                     </motion.div>
                   </div>
                   <motion.div

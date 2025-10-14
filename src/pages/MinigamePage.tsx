@@ -46,6 +46,10 @@ interface GameEvent {
 }
 
 export default function MinigamePage() {
+  const [playerName, setPlayerName] = useState<string>('');
+  const [showNameDialog, setShowNameDialog] = useState<boolean>(false);
+  const [showChangeNameDialog, setShowChangeNameDialog] = useState<boolean>(false);
+  const [newPlayerName, setNewPlayerName] = useState<string>('');
   const [gameState, setGameState] = useState<GameState>({
     chronoCoin: 30,
     matCoin: 30,
@@ -1245,7 +1249,35 @@ export default function MinigamePage() {
     }
   }, [gameState.gameActive, gameState.gameEnded, currentEvent]);
 
+  // Load tên từ localStorage khi component mount
+  useEffect(() => {
+    const savedName = localStorage.getItem('playerName');
+    if (savedName) {
+      setPlayerName(savedName);
+    }
+  }, []);
+
+  // Gửi điểm số khi game kết thúc
+  useEffect(() => {
+    if (gameState.gameEnded && playerName && gameState.score > 0) {
+      sendScoreToBackend(playerName, gameState.score);
+    }
+  }, [gameState.gameEnded, gameState.score, playerName]);
+
   const startGame = () => {
+    // Kiểm tra xem đã có tên trong localStorage chưa
+    const savedName = localStorage.getItem('playerName');
+    if (savedName) {
+      setPlayerName(savedName);
+      // Bắt đầu game trực tiếp nếu đã có tên
+      initializeGame();
+    } else {
+      // Hiển thị dialog nhập tên
+      setShowNameDialog(true);
+    }
+  };
+
+  const initializeGame = () => {
     setGameState({
       chronoCoin: 30,
       matCoin: 30,
@@ -1271,6 +1303,179 @@ export default function MinigamePage() {
     setEliminatedOptions([]);
   };
 
+  const sendScoreToBackend = async (name: string, score: number) => {
+    const payload = {
+      name: name,
+      score: score
+    };
+    
+    // JSON hóa payload trước khi gửi
+    const jsonPayload = JSON.stringify(payload);
+    
+    console.log('🚀 Gửi điểm số lên backend:');
+    console.log('📦 Payload:', payload);
+    console.log('📦 JSON Payload:', jsonPayload);
+    console.log('🌐 URL:', 'https://script.google.com/macros/s/AKfycbyvDHha7xi7T7dynFh3KjGAtjrT9nYYOI0mpxf3RNSt8mBysCWkzJi6HNWg_aeATr3xkw/exec?mode=max');
+    console.log('⏰ Timestamp:', new Date().toISOString());
+    
+    // Thử cách 1: POST với JSON và no-cors mode (tránh CORS preflight)
+    try {
+      console.log('🔄 Thử cách 1: POST với JSON và no-cors mode...');
+      
+      const response = await fetch(
+        'https://script.google.com/macros/s/AKfycbyvDHha7xi7T7dynFh3KjGAtjrT9nYYOI0mpxf3RNSt8mBysCWkzJi6HNWg_aeATr3xkw/exec?mode=max',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: jsonPayload,
+          mode: 'no-cors'
+        }
+      );
+
+      console.log('📡 Response status:', response.status);
+      console.log('📡 Response ok:', response.ok);
+      console.log('📡 Response type:', response.type);
+      
+      // Với no-cors mode, response sẽ luôn là opaque
+      if (response.type === 'opaque') {
+        console.log('✅ Request đã được gửi thành công (no-cors mode)');
+        console.log('ℹ️ Không thể đọc response do CORS policy, nhưng request đã được gửi');
+        console.log('🎯 Backend có thể đã nhận được dữ liệu');
+        return;
+      }
+      
+      if (response.ok) {
+        const responseData = await response.text();
+        console.log('✅ Điểm số đã được gửi thành công!');
+        console.log('📄 Response data:', responseData);
+        return;
+      } else {
+        console.error('❌ Lỗi khi gửi điểm số:', response.status, response.statusText);
+      }
+    } catch (error) {
+      console.error('❌ Cách 1 thất bại:', error);
+    }
+
+    // Thử cách 2: GET với query parameters (không có CORS issues)
+    try {
+      console.log('🔄 Thử cách 2: GET với query parameters...');
+      const params = new URLSearchParams({
+        name: name,
+        score: score.toString()
+      });
+      
+      const url = `https://script.google.com/macros/s/AKfycbyvDHha7xi7T7dynFh3KjGAtjrT9nYYOI0mpxf3RNSt8mBysCWkzJi6HNWg_aeATr3xkw/exec?mode=max&${params.toString()}`;
+      console.log('🔗 Final URL:', url);
+      
+      const response = await fetch(url, {
+        method: 'GET'
+        // Không có headers để tránh CORS preflight
+      });
+
+      console.log('📡 Response status:', response.status);
+      console.log('📡 Response ok:', response.ok);
+      
+      if (response.ok) {
+        const responseData = await response.text();
+        console.log('✅ Điểm số đã được gửi thành công!');
+        console.log('📄 Response data:', responseData);
+        return;
+      } else {
+        console.error('❌ Lỗi khi gửi điểm số:', response.status, response.statusText);
+      }
+    } catch (error) {
+      console.error('❌ Cách 2 thất bại:', error);
+    }
+
+    // Thử cách 3: POST với form data (không có CORS issues)
+    try {
+      console.log('🔄 Thử cách 3: POST với form data...');
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('score', score.toString());
+      
+      const response = await fetch(
+        'https://script.google.com/macros/s/AKfycbyvDHha7xi7T7dynFh3KjGAtjrT9nYYOI0mpxf3RNSt8mBysCWkzJi6HNWg_aeATr3xkw/exec?mode=max',
+        {
+          method: 'POST',
+          body: formData
+          // Không có headers để tránh CORS preflight
+        }
+      );
+
+      console.log('📡 Response status:', response.status);
+      console.log('📡 Response ok:', response.ok);
+      
+      if (response.ok) {
+        const responseData = await response.text();
+        console.log('✅ Điểm số đã được gửi thành công!');
+        console.log('📄 Response data:', responseData);
+        return;
+      } else {
+        console.error('❌ Lỗi khi gửi điểm số:', response.status, response.statusText);
+      }
+    } catch (error) {
+      console.error('❌ Cách 3 thất bại:', error);
+    }
+
+    console.log('⚠️ Cả 3 cách đều thất bại. Có thể do:');
+    console.log('1. Google Apps Script chưa được deploy đúng cách');
+    console.log('2. URL không đúng hoặc script không tồn tại');
+    console.log('3. Cần deploy script với quyền "Anyone"');
+    console.log('4. Backend nhận được dữ liệu nhưng chưa lưu vào database');
+    console.log('5. Có delay trong việc cập nhật leaderboard');
+    console.log('6. CORS policy vẫn chặn request');
+    console.log('');
+    console.log('💡 Giải pháp đề xuất:');
+    console.log('- Kiểm tra Google Apps Script có deploy đúng không');
+    console.log('- Kiểm tra script có lưu dữ liệu vào spreadsheet/database không');
+    console.log('- Thêm CORS headers trong script:');
+    console.log('  doPost(e) {');
+    console.log('    // Parse JSON từ request body');
+    console.log('    const data = JSON.parse(e.postData.contents);');
+    console.log('    const sheet = SpreadsheetApp.getActiveSheet();');
+    console.log('    sheet.appendRow([data.name, data.score, new Date()]);');
+    console.log('    ');
+    console.log('    return ContentService.createTextOutput(JSON.stringify({ok: true}))');
+    console.log('      .setMimeType(ContentService.MimeType.JSON);');
+    console.log('  }');
+    console.log('');
+    console.log('🔍 Debug tips:');
+    console.log('- Kiểm tra Google Sheets có được cập nhật không');
+    console.log('- Thử gửi request trực tiếp từ Postman/curl với JSON body');
+    console.log('- Kiểm tra logs trong Google Apps Script editor');
+    console.log('- Đảm bảo script có function doPost() để xử lý POST request');
+  };
+
+  const handleNameSubmit = () => {
+    if (playerName.trim()) {
+      // Lưu tên vào localStorage
+      localStorage.setItem('playerName', playerName.trim());
+      setShowNameDialog(false);
+      // Bắt đầu game
+      initializeGame();
+    }
+  };
+
+  const handleChangeName = () => {
+    const savedName = localStorage.getItem('playerName');
+    if (savedName) {
+      setNewPlayerName(savedName);
+    }
+    setShowChangeNameDialog(true);
+  };
+
+  const handleChangeNameSubmit = () => {
+    if (newPlayerName.trim()) {
+      // Cập nhật tên trong localStorage
+      localStorage.setItem('playerName', newPlayerName.trim());
+      setPlayerName(newPlayerName.trim());
+      setShowChangeNameDialog(false);
+    }
+  };
+
   const resetGame = () => {
     setGameState({
       chronoCoin: 30,
@@ -1290,6 +1495,32 @@ export default function MinigamePage() {
         phoneFriend: false,
         switchQuestion: false
       }
+    });
+    setCurrentEvent(null);
+    setShowQuiz(false);
+    setQuizAnswer(null);
+    setEliminatedOptions([]);
+  };
+
+  const exitToMainMenu = () => {
+    setGameState({
+      chronoCoin: 30,
+      matCoin: 30,
+      lifespan: 100,
+      qualityOfLife: 100,
+      energy: 100,
+      knowledge: 100,
+      timeLeft: 300, // 5 phút
+      gameActive: false, // Không tự động bắt đầu game
+      gameEnded: false,
+      gameWon: false,
+      score: 0,
+      powerUpsUsed: {
+        fiftyFifty: false,
+        askAudience: false,
+        phoneFriend: false,
+        switchQuestion: false
+      },
     });
     setCurrentEvent(null);
     setShowQuiz(false);
@@ -1815,21 +2046,155 @@ export default function MinigamePage() {
                 </svg>
                 Luật chơi
               </motion.button>
+
+              <motion.button
+                onClick={handleChangeName}
+                className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+                Đổi tên
+              </motion.button>
             </div>
+          )}
+
+          {/* Hiển thị tên người chơi */}
+          {playerName && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center mt-4"
+            >
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2 border border-white/20">
+                <svg className="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+                <span className="text-white font-medium">Người chơi: {playerName}</span>
+              </div>
+            </motion.div>
           )}
           
           {(gameState.gameActive || gameState.gameEnded) && (
-            <motion.button
-              onClick={resetGame}
-              className="bg-gray-600 hover:bg-gray-700 text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <RotateCcw className="w-5 h-5" />
-              Chơi lại
-            </motion.button>
+            <div className="flex gap-4 justify-center">
+              <motion.button
+                onClick={resetGame}
+                className="bg-gray-600 hover:bg-gray-700 text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <RotateCcw className="w-5 h-5" />
+                Chơi lại
+              </motion.button>
+              
+              <motion.button
+                onClick={exitToMainMenu}
+                className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                Bỏ cuộc
+              </motion.button>
+            </div>
           )}
         </motion.div>
+
+        {/* Dialog nhập tên */}
+        <Dialog.Root open={showNameDialog} onOpenChange={setShowNameDialog}>
+          <Dialog.Portal>
+            <Dialog.Overlay className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50" />
+            <Dialog.Content className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl p-6 shadow-2xl z-50 w-full max-w-md">
+              <Dialog.Title className="text-2xl font-bold text-slate-800 mb-4">
+                Nhập tên của bạn
+              </Dialog.Title>
+              <Dialog.Description className="text-slate-600 mb-6">
+                Vui lòng nhập tên để bắt đầu chơi game. Tên này sẽ được lưu và sử dụng để ghi điểm.
+              </Dialog.Description>
+              
+              <div className="space-y-4">
+                <input
+                  type="text"
+                  value={playerName}
+                  onChange={(e) => setPlayerName(e.target.value)}
+                  placeholder="Nhập tên của bạn..."
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  onKeyPress={(e) => {
+                    if (e.key === 'Enter') {
+                      handleNameSubmit();
+                    }
+                  }}
+                />
+                
+                <div className="flex gap-3">
+                  <button
+                    onClick={handleNameSubmit}
+                    disabled={!playerName.trim()}
+                    className="flex-1 bg-blue-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  >
+                    Bắt đầu chơi
+                  </button>
+                  <button
+                    onClick={() => setShowNameDialog(false)}
+                    className="px-4 py-3 text-gray-600 hover:text-gray-800 transition-colors"
+                  >
+                    Hủy
+                  </button>
+                </div>
+              </div>
+            </Dialog.Content>
+          </Dialog.Portal>
+        </Dialog.Root>
+
+        {/* Dialog đổi tên */}
+        <Dialog.Root open={showChangeNameDialog} onOpenChange={setShowChangeNameDialog}>
+          <Dialog.Portal>
+            <Dialog.Overlay className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50" />
+            <Dialog.Content className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl p-6 shadow-2xl z-50 w-full max-w-md">
+              <Dialog.Title className="text-2xl font-bold text-slate-800 mb-4">
+                Đổi tên người chơi
+              </Dialog.Title>
+              <Dialog.Description className="text-slate-600 mb-6">
+                Nhập tên mới cho người chơi. Tên này sẽ được lưu và sử dụng cho các lần chơi tiếp theo.
+              </Dialog.Description>
+              
+              <div className="space-y-4">
+                <input
+                  type="text"
+                  value={newPlayerName}
+                  onChange={(e) => setNewPlayerName(e.target.value)}
+                  placeholder="Nhập tên mới..."
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  onKeyPress={(e) => {
+                    if (e.key === 'Enter') {
+                      handleChangeNameSubmit();
+                    }
+                  }}
+                />
+                
+                <div className="flex gap-3">
+                  <button
+                    onClick={handleChangeNameSubmit}
+                    disabled={!newPlayerName.trim()}
+                    className="flex-1 bg-purple-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  >
+                    Đổi tên
+                  </button>
+                  <button
+                    onClick={() => setShowChangeNameDialog(false)}
+                    className="px-4 py-3 text-gray-600 hover:text-gray-800 transition-colors"
+                  >
+                    Hủy
+                  </button>
+                </div>
+              </div>
+            </Dialog.Content>
+          </Dialog.Portal>
+        </Dialog.Root>
 
         {/* Game Stats - 4 Tài nguyên */}
         <motion.div
@@ -2284,14 +2649,29 @@ export default function MinigamePage() {
                   </div>
                 )}
                 
-                <motion.button
-                  onClick={resetGame}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Chơi lại
-                </motion.button>
+                <div className="flex gap-4 justify-center">
+                  <motion.button
+                    onClick={resetGame}
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <RotateCcw className="w-5 h-5" />
+                    Chơi lại
+                  </motion.button>
+                  
+                  <motion.button
+                    onClick={exitToMainMenu}
+                    className="bg-gray-600 hover:bg-gray-700 text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    Bỏ cuộc
+                  </motion.button>
+                </div>
               </div>
             </Dialog.Content>
           </Dialog.Portal>
