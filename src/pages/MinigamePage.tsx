@@ -48,6 +48,19 @@ interface GameEvent {
 export default function MinigamePage() {
   const [playerName, setPlayerName] = useState<string>('');
   const [showNameDialog, setShowNameDialog] = useState<boolean>(false);
+  const [notification, setNotification] = useState<{
+    show: boolean;
+    message: string;
+    type: 'error' | 'success' | 'warning';
+  }>({ show: false, message: '', type: 'error' });
+  
+  const showNotification = (message: string, type: 'error' | 'success' | 'warning' = 'error') => {
+    setNotification({ show: true, message, type });
+    setTimeout(() => {
+      setNotification(prev => ({ ...prev, show: false }));
+    }, 3000);
+  };
+  
   const [showChangeNameDialog, setShowChangeNameDialog] = useState<boolean>(false);
   const [newPlayerName, setNewPlayerName] = useState<string>('');
   const [gameState, setGameState] = useState<GameState>({
@@ -1550,7 +1563,7 @@ export default function MinigamePage() {
         // Particle effect
         createParticles(400, 300);
       } else {
-        alert('Không đủ tiền để thực hiện hành động này!');
+        showNotification('Không đủ tiền để thực hiện hành động này!', 'error');
         return;
       }
     } else {
@@ -3036,6 +3049,37 @@ export default function MinigamePage() {
             </Dialog.Content>
           </Dialog.Portal>
         </Dialog.Root>
+        
+        {/* Notification Component */}
+        <AnimatePresence>
+          {notification.show && (
+            <motion.div
+              initial={{ opacity: 0, y: -100, scale: 0.8 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -100, scale: 0.8 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-[100] px-6 py-4 rounded-xl shadow-2xl border-2 max-w-md mx-4 ${
+                notification.type === 'error' 
+                  ? 'bg-red-500/90 border-red-400 text-white' 
+                  : notification.type === 'success'
+                  ? 'bg-green-500/90 border-green-400 text-white'
+                  : 'bg-yellow-500/90 border-yellow-400 text-white'
+              }`}
+            >
+              <div className="flex items-center gap-3">
+                <div className="text-2xl">
+                  {notification.type === 'error' ? '❌' : notification.type === 'success' ? '✅' : '⚠️'}
+                </div>
+                <div>
+                  <p className="font-semibold text-lg">
+                    {notification.type === 'error' ? 'Lỗi!' : notification.type === 'success' ? 'Thành công!' : 'Cảnh báo!'}
+                  </p>
+                  <p className="text-sm opacity-90">{notification.message}</p>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
