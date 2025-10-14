@@ -11,7 +11,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
     { icon: '💰', label: 'Vàng', year: '600 TCN' },
     { icon: '📜', label: 'Tiền giấy', year: '1661' },
     { icon: '💳', label: 'Thẻ tín dụng', year: '1950' },
-    { icon: '⛓️', label: 'Blockchain', year: '2009' },
+    { icon: '🪙', label: 'Blockchain', year: '2009' },
   ];
 
   return (

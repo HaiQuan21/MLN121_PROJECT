@@ -81,6 +81,15 @@ export default function MinigamePage() {
     message: ''
   });
   const [showRules, setShowRules] = useState(false);
+  const [modalState, setModalState] = useState<{
+    show: boolean;
+    type: 'askAudience' | 'phoneFriend' | null;
+    data: any;
+  }>({
+    show: false,
+    type: null,
+    data: null
+  });
 
   // Database các sự kiện game phức tạp
   const gameEvents: GameEvent[] = [
@@ -1686,9 +1695,15 @@ export default function MinigamePage() {
     const total = audienceResults.reduce((sum, val) => sum + val, 0);
     const normalizedResults = audienceResults.map(val => Math.round((val / total) * 100));
     
-    alert(`Kết quả khán giả:\n${currentEvent.quizOptions.map((_, i) => 
-      `${String.fromCharCode(65 + i)}: ${normalizedResults[i]}%`
-    ).join('\n')}`);
+    // Hiển thị modal với kết quả
+    setModalState({
+      show: true,
+      type: 'askAudience',
+      data: {
+        results: normalizedResults,
+        options: currentEvent.quizOptions
+      }
+    });
     
     setGameState(prev => ({
       ...prev,
@@ -1708,7 +1723,16 @@ export default function MinigamePage() {
     const suggestedAnswer = isCorrect ? correctLetter : 
       String.fromCharCode(65 + Math.floor(Math.random() * currentEvent.quizOptions.length));
     
-    alert(`Bạn tôi nghĩ đáp án là: ${suggestedAnswer}`);
+    // Hiển thị modal với gợi ý từ bạn
+    setModalState({
+      show: true,
+      type: 'phoneFriend',
+      data: {
+        suggestedAnswer,
+        isCorrect,
+        correctAnswer: correctLetter
+      }
+    });
     
     setGameState(prev => ({
       ...prev,
@@ -2565,6 +2589,73 @@ export default function MinigamePage() {
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Modal cho Ask Audience và Phone Friend */}
+        <Dialog.Root open={modalState.show} onOpenChange={(open) => {
+          if (!open) {
+            setModalState({ show: false, type: null, data: null });
+          }
+        }}>
+          <Dialog.Portal>
+            <Dialog.Overlay className="fixed inset-0 bg-black/50 z-50" />
+            <Dialog.Content className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-slate-800 rounded-2xl p-6 max-w-md w-full mx-4 z-50 border border-slate-700">
+              <Dialog.Title className="text-xl font-bold text-white mb-4">
+                {modalState.type === 'askAudience' ? '🎭 Kết quả khán giả' : '📞 Gợi ý từ bạn'}
+              </Dialog.Title>
+              
+              {modalState.type === 'askAudience' && modalState.data && (
+                <div className="space-y-3">
+                  <p className="text-slate-300 mb-4">Khán giả đã bình chọn:</p>
+                  {modalState.data.results.map((result: number, index: number) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <span className="text-white font-semibold w-8">
+                        {String.fromCharCode(65 + index)}:
+                      </span>
+                      <div className="flex-1 bg-slate-700 rounded-full h-6 overflow-hidden">
+                        <div 
+                          className="h-full bg-gradient-to-r from-blue-500 to-blue-400 transition-all duration-1000 ease-out"
+                          style={{ width: `${result}%` }}
+                        />
+                      </div>
+                      <span className="text-white font-semibold w-12 text-right">
+                        {result}%
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
+              
+              {modalState.type === 'phoneFriend' && modalState.data && (
+                <div className="space-y-4">
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">📞</div>
+                    <p className="text-slate-300 mb-2">Bạn tôi nói:</p>
+                    <div className="bg-slate-700 rounded-lg p-4 border border-slate-600">
+                      <p className="text-xl font-bold text-white">
+                        "Tôi nghĩ đáp án là: <span className="text-yellow-400">{modalState.data.suggestedAnswer}</span>"
+                      </p>
+                    </div>
+                    <p className="text-sm text-slate-400 mt-2">
+                      {modalState.data.isCorrect ? '✅ Tin tưởng bạn này!' : '⚠️ Cân nhắc kỹ nhé!'}
+                    </p>
+                  </div>
+                </div>
+              )}
+              
+              <div className="flex justify-center mt-6">
+                <Dialog.Close asChild>
+                  <motion.button
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Đã hiểu
+                  </motion.button>
+                </Dialog.Close>
+              </div>
+            </Dialog.Content>
+          </Dialog.Portal>
+        </Dialog.Root>
       </div>
     </div>
   );
