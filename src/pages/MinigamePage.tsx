@@ -297,13 +297,13 @@ export default function MinigamePage() {
 
   // Database câu hỏi quiz theo 4 nhóm
   const quizQuestions = [
-    // Nhóm 1: Lịch sử tiền tệ (15 câu)
+    // Nhóm 1: Lịch sử tiền tệ (giữ các câu bám nội dung trang Lịch sử)
     {
       id: 'history_1',
       question: 'Hình thức trao đổi đầu tiên trong lịch sử tiền tệ là gì?',
       options: ['Tiền giấy', 'Trao đổi hàng hóa (barter)', 'Tiền xu', 'Tiền số'],
       answer: 1,
-      reward: { chronoCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Lịch sử tiền tệ'
     },
     {
@@ -311,7 +311,7 @@ export default function MinigamePage() {
       question: 'Loại tiền tệ đầu tiên được sử dụng rộng rãi là gì?',
       options: ['Vàng', 'Vỏ sò (cowrie shells)', 'Tiền giấy', 'Thẻ tín dụng'],
       answer: 1,
-      reward: { chronoCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Lịch sử tiền tệ'
     },
     {
@@ -319,7 +319,7 @@ export default function MinigamePage() {
       question: 'Tiền xu đầu tiên được đúc ở đâu?',
       options: ['Trung Quốc', 'Ai Cập', 'Lydia (Asia Minor)', 'Ấn Độ'],
       answer: 2,
-      reward: { chronoCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Lịch sử tiền tệ'
     },
     {
@@ -327,31 +327,7 @@ export default function MinigamePage() {
       question: 'Tiền giấy đầu tiên được phát hành ở đâu?',
       options: ['Châu Âu', 'Trung Quốc', 'Mỹ', 'Ấn Độ'],
       answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Lịch sử tiền tệ'
-    },
-    {
-      id: 'history_5',
-      question: 'Sự kiện nào đánh dấu sự ra đời của đồng đô la Mỹ?',
-      options: ['Tuyên ngôn Độc lập 1776', 'Đạo luật Mint Act 1792', 'Nội chiến Mỹ 1861', 'Đại suy thoái 1929'],
-      answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Lịch sử tiền tệ'
-    },
-    {
-      id: 'history_6',
-      question: 'Vàng trở thành tiêu chuẩn tiền tệ toàn cầu vào thế kỷ nào?',
-      options: ['18', '19', '20', '21'],
-      answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Lịch sử tiền tệ'
-    },
-    {
-      id: 'history_7',
-      question: 'Hệ thống tiền tệ đầu tiên ở châu Mỹ là gì?',
-      options: ['Tiền giấy in bởi Anh', 'Bills of credit từ Continental Congress', 'Tiền xu vàng', 'Tiền số'],
-      answer: 1,
-      reward: { chronoCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Lịch sử tiền tệ'
     },
     {
@@ -359,23 +335,7 @@ export default function MinigamePage() {
       question: 'Spade money là loại tiền tệ cổ của triều đại nào ở Trung Quốc?',
       options: ['Hán', 'Chu', 'Tần', 'Minh'],
       answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Lịch sử tiền tệ'
-    },
-    {
-      id: 'history_9',
-      question: 'Sự kiện "Gold Rush" đầu tiên ở Mỹ xảy ra năm nào?',
-      options: ['1802', '1849', '1900', '1933'],
-      answer: 0,
-      reward: { chronoCoin: 5 },
-      category: 'Lịch sử tiền tệ'
-    },
-    {
-      id: 'history_10',
-      question: 'Tiền tệ đầu tiên được đề cập trong Kinh Thánh là gì?',
-      options: ['Vàng', 'Tiền bạc (shekels)', 'Vỏ sò', 'Tiền giấy'],
-      answer: 1,
-      reward: { chronoCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Lịch sử tiền tệ'
     },
     {
@@ -383,15 +343,7 @@ export default function MinigamePage() {
       question: 'Coinage đầu tiên xuất hiện ở khu vực nào?',
       options: ['Châu Phi', 'Asia Minor', 'Châu Mỹ', 'Châu Âu'],
       answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Lịch sử tiền tệ'
-    },
-    {
-      id: 'history_12',
-      question: 'Tiền giấy hiện đại bắt nguồn từ cuộc chiến chống giả mạo ở thế kỷ nào?',
-      options: ['7', '10', '15', '18'],
-      answer: 0,
-      reward: { chronoCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Lịch sử tiền tệ'
     },
     {
@@ -399,15 +351,7 @@ export default function MinigamePage() {
       question: 'Cattle (gia súc) được sử dụng làm tiền tệ từ năm nào?',
       options: ['9000–6000 BC', '1000 BC', '500 AD', '1800 AD'],
       answer: 0,
-      reward: { chronoCoin: 5 },
-      category: 'Lịch sử tiền tệ'
-    },
-    {
-      id: 'history_14',
-      question: 'United States Mint được thành lập năm nào?',
-      options: ['1776', '1792', '1833', '1900'],
-      answer: 1,
-      reward: { chronoCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Lịch sử tiền tệ'
     },
     {
@@ -415,17 +359,34 @@ export default function MinigamePage() {
       question: 'Tiền tệ tiến hóa từ kim loại sang giấy do nhu cầu gì?',
       options: ['Dễ mang theo', 'Chống giả mạo', 'Tăng giá trị', 'Kết nối số'],
       answer: 0,
-      reward: { chronoCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Lịch sử tiền tệ'
+    },
+    // Bổ sung bám nội dung trang Lịch sử
+    {
+      id: 'history_new_1',
+      question: 'Stockholms Banco phát hành tiền giấy châu Âu đầu tiên năm nào?',
+      options: ['1492', '1600', '1661', '1694'],
+      answer: 2,
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Lịch sử tiền tệ'
+    },
+    {
+      id: 'history_new_2',
+      question: 'Đồng bạc tiêu chuẩn của Đế chế La Mã là gì?',
+      options: ['Dinar', 'Denarius', 'Dollar', 'Euro'],
+      answer: 1,
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Lịch sử tiền tệ'
     },
 
-    // Nhóm 2: Tiền số hóa là gì (10 câu)
+    // Nhóm 2: Tiền số hóa (bám nội dung trang Digital)
     {
       id: 'digital_1',
       question: 'Tiền số (digital currency) tồn tại dưới dạng gì?',
       options: ['Vật lý như tiền giấy', 'Hoàn toàn điện tử', 'Kim loại quý', 'Hàng hóa trao đổi'],
       answer: 1,
-      reward: { matCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Tiền số hóa'
     },
     {
@@ -433,7 +394,7 @@ export default function MinigamePage() {
       question: 'CBDC là viết tắt của gì?',
       options: ['Central Bank Digital Currency', 'Crypto Blockchain Digital Coin', 'Commercial Bank Deposit Currency', 'Cash-Based Digital Currency'],
       answer: 0,
-      reward: { matCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Tiền số hóa'
     },
     {
@@ -441,7 +402,7 @@ export default function MinigamePage() {
       question: 'Cryptocurrency khác với tiền truyền thống ở điểm nào?',
       options: ['Không cần ngân hàng trung ương', 'Luôn có dạng vật lý', 'Chỉ dùng để trao đổi hàng hóa', 'Được in bởi chính phủ'],
       answer: 0,
-      reward: { matCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Tiền số hóa'
     },
     {
@@ -449,7 +410,7 @@ export default function MinigamePage() {
       question: 'Ví điện tử (digital wallet) dùng để làm gì?',
       options: ['Lưu trữ tiền giấy', 'Chuyển khoản điện tử', 'Đúc tiền xu', 'Trao đổi vàng'],
       answer: 1,
-      reward: { matCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Tiền số hóa'
     },
     {
@@ -457,7 +418,7 @@ export default function MinigamePage() {
       question: 'Tiền số có thể được quy định bởi ai?',
       options: ['Chỉ cá nhân', 'Ngân hàng trung ương hoặc không quy định', 'Chỉ doanh nghiệp', 'Chỉ chính phủ'],
       answer: 1,
-      reward: { matCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Tiền số hóa'
     },
     {
@@ -465,7 +426,7 @@ export default function MinigamePage() {
       question: 'Blockchain dùng để làm gì trong tiền số?',
       options: ['Xác thực giao dịch', 'In tiền giấy', 'Trao đổi hàng hóa', 'Lưu trữ vàng'],
       answer: 0,
-      reward: { matCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Tiền số hóa'
     },
     {
@@ -473,7 +434,7 @@ export default function MinigamePage() {
       question: 'Tiền ảo (virtual currency) không có dạng gì?',
       options: ['Điện tử', 'Vật lý', 'Số hóa', 'Mã hóa'],
       answer: 1,
-      reward: { matCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Tiền số hóa'
     },
     {
@@ -481,33 +442,34 @@ export default function MinigamePage() {
       question: 'Digital money được chuyển giao qua gì?',
       options: ['Máy in', 'Máy tính và mạng', 'Thư tay', 'Xe tải'],
       answer: 1,
-      reward: { matCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Tiền số hóa'
+    },
+    // Bổ sung bám ví dụ trang Digital
+    {
+      id: 'digital_new_1',
+      question: 'Ví điện tử phổ biến tại Việt Nam được nhắc đến trong dự án?',
+      options: ['MoMo', 'Alipay', 'Cash App', 'Revolut'],
+      answer: 0,
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Tiền số hóa'
     },
     {
-      id: 'digital_9',
-      question: 'Stablecoins là loại tiền số gì?',
-      options: ['Biến động cao', 'Liên kết với tài sản ổn định', 'Chỉ dùng cho game', 'Không mã hóa'],
-      answer: 1,
-      reward: { matCoin: 5 },
-      category: 'Tiền số hóa'
-    },
-    {
-      id: 'digital_10',
-      question: 'Tiền số giúp giảm rủi ro gì?',
-      options: ['Giả mạo', 'Mất mát vật lý', 'Tất cả các lựa chọn', 'Không có rủi ro'],
-      answer: 1,
-      reward: { matCoin: 5 },
+      id: 'digital_new_2',
+      question: 'Ví dụ nền tảng hợp đồng thông minh được nêu trong trang Digital là?',
+      options: ['Litecoin', 'Dogecoin', 'Ethereum', 'Ripple'],
+      answer: 2,
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Tiền số hóa'
     },
 
-    // Nhóm 3: Câu chuyện về Bitcoin (10 câu)
+    // Nhóm 3: Câu chuyện về Bitcoin (bám nội dung trang Bitcoin)
     {
       id: 'bitcoin_1',
       question: 'Bitcoin được tạo ra bởi ai?',
       options: ['Elon Musk', 'Satoshi Nakamoto', 'Bill Gates', 'Warren Buffett'],
       answer: 1,
-      reward: { chronoCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Bitcoin'
     },
     {
@@ -515,15 +477,7 @@ export default function MinigamePage() {
       question: 'Bitcoin ra đời năm nào?',
       options: ['2008', '2009', '2010', '2011'],
       answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Bitcoin'
-    },
-    {
-      id: 'bitcoin_3',
-      question: 'Giá Bitcoin lần đầu đạt 1 USD vào năm nào?',
-      options: ['2009', '2010', '2011', '2013'],
-      answer: 2,
-      reward: { chronoCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Bitcoin'
     },
     {
@@ -531,15 +485,7 @@ export default function MinigamePage() {
       question: 'Sự kiện đầu tiên mua hàng bằng Bitcoin là gì?',
       options: ['Mua xe', 'Mua pizza', 'Mua nhà', 'Mua vàng'],
       answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Bitcoin'
-    },
-    {
-      id: 'bitcoin_5',
-      question: 'Bitcoin đạt đỉnh giá đầu tiên vào năm nào?',
-      options: ['2013', '2017', '2021', '2025'],
-      answer: 1,
-      reward: { chronoCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Bitcoin'
     },
     {
@@ -547,15 +493,7 @@ export default function MinigamePage() {
       question: 'Blockchain của Bitcoin bắt đầu từ block nào?',
       options: ['Block 0 (Genesis)', 'Block 1', 'Block 100', 'Block 1000'],
       answer: 0,
-      reward: { chronoCoin: 5 },
-      category: 'Bitcoin'
-    },
-    {
-      id: 'bitcoin_7',
-      question: 'Bitcoin bị ảnh hưởng lớn bởi sự kiện nào năm 2020?',
-      options: ['Đại dịch COVID-19', 'Chiến tranh', 'Bầu cử Mỹ', 'Olympics'],
-      answer: 0,
-      reward: { chronoCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Bitcoin'
     },
     {
@@ -563,41 +501,50 @@ export default function MinigamePage() {
       question: 'Lịch sử Bitcoin bắt nguồn từ lĩnh vực nào?',
       options: ['Cryptography', 'Ngân hàng', 'Nông nghiệp', 'Du lịch'],
       answer: 0,
-      reward: { chronoCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Bitcoin'
+    },
+    // Bổ sung bám mốc trang Bitcoin
+    {
+      id: 'bitcoin_new_1',
+      question: 'Whitepaper Bitcoin được công bố năm nào?',
+      options: ['2007', '2008', '2009', '2010'],
+      answer: 1,
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Bitcoin'
     },
     {
-      id: 'bitcoin_9',
-      question: 'Bitcoin lần đầu đạt 10 USD vào tháng nào năm 2011?',
-      options: ['Tháng 1', 'Tháng 6', 'Tháng 12', 'Không đạt'],
-      answer: 1,
-      reward: { chronoCoin: 5 },
+      id: 'bitcoin_new_2',
+      question: 'Mốc ATH 11/2021 của Bitcoin khoảng bao nhiêu?',
+      options: ['$20k', '$40k', '$69k', '$100k'],
+      answer: 2,
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Bitcoin'
     },
     {
-      id: 'bitcoin_10',
-      question: 'Bitcoin kết thúc năm 2019 với giá khoảng bao nhiêu?',
-      options: ['1000 USD', '7200 USD', '10000 USD', '50000 USD'],
+      id: 'bitcoin_new_3',
+      question: 'Tháng 3/2024, BTC lập đỉnh mới quanh mức nào?',
+      options: ['$50-55k', '$60-62k', '$73-74k', '$80-85k'],
+      answer: 2,
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Bitcoin'
+    },
+    {
+      id: 'bitcoin_new_4',
+      question: 'Tổng cung tối đa của Bitcoin là?',
+      options: ['10 triệu', '21 triệu', '100 triệu', 'Vô hạn'],
       answer: 1,
-      reward: { chronoCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Bitcoin'
     },
 
-    // Nhóm 4: Tiền trong tương lai (15 câu)
+    // Nhóm 4: Tiền trong tương lai (bám nội dung trang Future)
     {
       id: 'future_1',
       question: 'CBDC có thể thay đổi gì trong ngân hàng?',
       options: ['Kết thúc ngân hàng truyền thống', 'Tăng tốc giao dịch', 'Tất cả các lựa chọn', 'Không thay đổi'],
       answer: 1,
-      reward: { matCoin: 5 },
-      category: 'Tương lai tiền tệ'
-    },
-    {
-      id: 'future_2',
-      question: 'Số lượng quốc gia đang khám phá CBDC là bao nhiêu?',
-      options: ['50', '114', '200', '300'],
-      answer: 1,
-      reward: { matCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Tương lai tiền tệ'
     },
     {
@@ -605,7 +552,7 @@ export default function MinigamePage() {
       question: 'CBDC có thể dùng để tạo tiền gì?',
       options: ['Programmable money', 'Tiền giấy mới', 'Vàng kỹ thuật số', 'Hàng hóa'],
       answer: 0,
-      reward: { matCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Tương lai tiền tệ'
     },
     {
@@ -613,15 +560,7 @@ export default function MinigamePage() {
       question: 'Xu hướng CBDC tăng mạnh ở khu vực nào?',
       options: ['Châu Âu', 'Thị trường mới nổi', 'Châu Phi', 'Mỹ'],
       answer: 1,
-      reward: { matCoin: 5 },
-      category: 'Tương lai tiền tệ'
-    },
-    {
-      id: 'future_5',
-      question: 'Số lượng giao dịch CBDC dự đoán năm 2031 là bao nhiêu?',
-      options: ['1 tỷ', '7.8 tỷ', '100 tỷ', '1 nghìn tỷ'],
-      answer: 1,
-      reward: { matCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Tương lai tiền tệ'
     },
     {
@@ -629,7 +568,7 @@ export default function MinigamePage() {
       question: 'Blockchain giúp CBDC giảm rủi ro gì?',
       options: ['Thất bại của tổ chức tài chính', 'Lạm phát', 'Chiến tranh', 'Thời tiết'],
       answer: 0,
-      reward: { matCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Tương lai tiền tệ'
     },
     {
@@ -637,23 +576,7 @@ export default function MinigamePage() {
       question: 'Digital currencies có thể mở ra kỷ nguyên gì?',
       options: ['Thanh toán toàn cầu mới', 'Trao đổi hàng hóa cũ', 'Tiền giấy', 'Vàng'],
       answer: 0,
-      reward: { matCoin: 5 },
-      category: 'Tương lai tiền tệ'
-    },
-    {
-      id: 'future_8',
-      question: 'Nghiên cứu về tiền tương lai tập trung vào gì?',
-      options: ['Digitalisation', 'In tiền giấy', 'Trao đổi vật lý', 'Không thay đổi'],
-      answer: 0,
-      reward: { matCoin: 5 },
-      category: 'Tương lai tiền tệ'
-    },
-    {
-      id: 'future_9',
-      question: 'Stablecoins được đề cập trong báo cáo nào?',
-      options: ['Future of Money and Payments', 'Wikipedia', 'Kinh Thánh', 'Không có'],
-      answer: 0,
-      reward: { matCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Tương lai tiền tệ'
     },
     {
@@ -661,7 +584,7 @@ export default function MinigamePage() {
       question: 'CBDC giúp tăng gì cho thị trường mới nổi?',
       options: ['Financial inclusion', 'Lạm phát', 'Nợ nần', 'Chiến tranh'],
       answer: 0,
-      reward: { matCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Tương lai tiền tệ'
     },
     {
@@ -669,7 +592,7 @@ export default function MinigamePage() {
       question: 'Tương lai tiền tệ bao gồm gì?',
       options: ['Instant payments', 'Chỉ tiền giấy', 'Trao đổi hàng hóa', 'Không số hóa'],
       answer: 0,
-      reward: { matCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Tương lai tiền tệ'
     },
     {
@@ -677,7 +600,7 @@ export default function MinigamePage() {
       question: 'CBDC có thể được sử dụng như gì?',
       options: ['Dạng số của tiền mặt', 'Vàng', 'Hàng hóa', 'Xe hơi'],
       answer: 0,
-      reward: { matCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Tương lai tiền tệ'
     },
     {
@@ -685,15 +608,7 @@ export default function MinigamePage() {
       question: 'Xu hướng toàn cầu của CBDC là gì?',
       options: ['Giảm sử dụng tiền mặt', 'Tăng tiền giấy', 'Không thay đổi', 'Chỉ ở Mỹ'],
       answer: 0,
-      reward: { matCoin: 5 },
-      category: 'Tương lai tiền tệ'
-    },
-    {
-      id: 'future_14',
-      question: 'Blockchain trong CBDC giúp gì?',
-      options: ['Tạo tiền lập trình', 'In tiền', 'Trao đổi vật lý', 'Không giúp'],
-      answer: 0,
-      reward: { matCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Tương lai tiền tệ'
     },
     {
@@ -701,419 +616,352 @@ export default function MinigamePage() {
       question: 'Tương lai thanh toán tập trung vào gì?',
       options: ['Digital wallets và CBDC', 'Chỉ vàng', 'Tiền giấy', 'Hàng hóa'],
       answer: 0,
-      reward: { matCoin: 5 },
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Tương lai tiền tệ'
+    },
+    // Bổ sung bám xu hướng Future
+    {
+      id: 'future_new_1',
+      question: 'Một ví dụ CBDC được nhắc tới là?',
+      options: ['e-CNY', 'Bitcoin', 'Ethereum', 'USDT'],
+      answer: 0,
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Tương lai tiền tệ'
+    },
+    {
+      id: 'future_new_2',
+      question: 'Blockchain 3.0 hướng tới điều nào sau đây?',
+      options: ['TPS cao và phí thấp', 'Chỉ tăng kích thước khối', 'Chỉ dùng PoW', 'Không cần bảo mật'],
+      answer: 0,
+      reward: { chronoCoin: 5, matCoin: 5 },
       category: 'Tương lai tiền tệ'
     },
 
-    // Nhóm 5: Cung và Cầu (10 câu)
+    // Nhóm 5: Kinh tế thị trường (Dựa trên file PDF)
     {
-      id: 'supply_demand_1',
-      question: 'Trong kinh tế thị trường, giá cả được xác định chủ yếu bởi yếu tố nào?',
-      options: ['Chính phủ', 'Cung và cầu', 'Ngân hàng', 'Công nghệ'],
+      id: 'market_1',
+      question: 'Kinh tế thị trường là giai đoạn phát triển cao của nền kinh tế nào?',
+      options: ['Kinh tế tự nhiên', 'Kinh tế hàng hoá', 'Kinh tế tư bản chủ nghĩa', 'Kinh tế hàng hoá giản đơn'],
       answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Cung và Cầu'
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
     },
     {
-      id: 'supply_demand_2',
-      question: 'Khi cầu tăng mà cung không đổi, điều gì xảy ra với giá?',
-      options: ['Giảm', 'Tăng', 'Không đổi', 'Biến mất'],
-      answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Cung và Cầu'
-    },
-    {
-      id: 'supply_demand_3',
-      question: 'Nếu cung vượt cầu, điều gì thường xảy ra?',
-      options: ['Giá tăng', 'Giá giảm', 'Sản xuất ngừng', 'Lạm phát'],
-      answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Cung và Cầu'
-    },
-    {
-      id: 'supply_demand_4',
-      question: 'Yếu tố nào sau đây làm tăng cầu trong kinh tế thị trường?',
-      options: ['Thu nhập người tiêu dùng giảm', 'Giá sản phẩm tăng', 'Quảng cáo hiệu quả', 'Cung giảm mạnh'],
+      id: 'market_2',
+      question: 'Ưu thế của nền kinh tế thị trường là gì?',
+      options: [
+        'Luôn tạo động lực cho chủ thể kinh tế, phát huy tốt tiềm năng của mọi chủ thể kinh tế và tạo ra sự đa dạng các chủ thể kinh tế',
+        'Luôn tạo động lực cho chủ thể kinh tế, thị trường đóng vai trò quyết định trong việc phân bố các nguồn lực và tạo ra các phương thức để thỏa mãn tối đa nhu cầu của con người',
+        'Luôn tạo động lực cho chủ thể kinh tế, phát huy tốt tiềm năng của mọi chủ thể kinh tế và tạo ra các phương thức để thỏa mãn tối đa nhu cầu của con người',
+        'Đóng vai trò quyết định trong việc phân bổ các nguồn lực và tạo ra các phương thức để thỏa mãn tối đa nhu cầu của con người'
+      ],
       answer: 2,
-      reward: { chronoCoin: 5 },
-      category: 'Cung và Cầu'
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
     },
     {
-      id: 'supply_demand_5',
-      question: '"Độ co giãn của cầu" đo lường điều gì?',
-      options: ['Sản lượng sản xuất', 'Phản ứng của cầu khi giá thay đổi', 'Chi phí vận chuyển', 'Lợi nhuận doanh nghiệp'],
-      answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Cung và Cầu'
-    },
-    {
-      id: 'supply_demand_6',
-      question: 'Khi giá dầu tăng, cầu cho xe điện thường:',
-      options: ['Giảm', 'Tăng', 'Không đổi', 'Biến mất'],
-      answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Cung và Cầu'
-    },
-    {
-      id: 'supply_demand_7',
-      question: 'Cung tăng khi nào?',
-      options: ['Chi phí sản xuất giảm', 'Giá sản phẩm giảm', 'Thuế tăng cao', 'Cầu giảm'],
+      id: 'market_3',
+      question: 'Đặc trưng phổ biến của nền kinh tế thị trường là gì?',
+      options: [
+        'Có sự đa dạng của các chủ thể kinh tế, nhiều hình thức sở hữu; thị trường đóng vai trò quyết định trong việc phân bố các nguồn lực xã hội; giá cả được hình thành theo nguyên tắc thị trường; là nền kinh tế mở',
+        'Có sự đa dạng của các chủ thể kinh tế, nhiều hình thức sở hữu; nhà nước đóng vai trò quyết định trong việc phân bố các nguồn lực xã hội; giá cả được hình thành theo nguyên tắc thị trường; là nền kinh tế mở',
+        'Có sự đa dạng của các chủ thể kinh tế, nhiều hình thức sở hữu; thị trường đóng vai trò quyết định trong việc phân bố các nguồn lực xã hội; giá cả được hình thành theo quy luật cung - cầu; là nền kinh tế mở',
+        'Có sự đa dạng của các chủ thể kinh tế, nhiều hình thức sở hữu; thị trường đóng vai trò quyết định trong việc phân bố các nguồn lực xã hội; giá cả được hình thành theo nguyên tắc thị trường; là nền kinh tế đóng'
+      ],
       answer: 0,
-      reward: { chronoCoin: 5 },
-      category: 'Cung và Cầu'
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
     },
     {
-      id: 'supply_demand_8',
-      question: 'Trong kinh tế thị trường, "thặng dư tiêu dùng" là gì?',
-      options: ['Lợi nhuận của nhà sản xuất', 'Lợi ích người mua nhận khi trả ít hơn giá trị mong muốn', 'Thuế chính phủ thu', 'Chi phí vận chuyển'],
+      id: 'market_4',
+      question: 'Những khuyết tật của nền kinh tế thị trường là gì?',
+      options: [
+        'Tiềm ẩn rủi ro khủng hoảng; phân hóa sâu sắc trong xã hội, xu hướng sử dụng hợp lí tài nguyên không thể tái tạo được',
+        'Tiềm ẩn rủi ro khủng hoảng, xu hướng cạn kiệt tài nguyên không thể tái tạo được, phân hóa sâu sắc trong xã hội',
+        'Tiềm ẩn rủi ro khủng hoảng; tạo lập sự công bằng trong xã hội; xu hướng cạn kiệt tài nguyên không thể tái tạo được',
+        'Tiềm ẩn rủi ro khủng hoảng; phân hoá sâu sắc trong xã hội; xu hướng phân bổ hợp lí tài nguyên không thể tái tạo được'
+      ],
       answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Cung và Cầu'
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
     },
     {
-      id: 'supply_demand_9',
-      question: 'Khi chính phủ áp giá trần dưới giá thị trường, điều gì xảy ra?',
-      options: ['Thặng dư hàng hóa', 'Thiếu hụt hàng hóa', 'Giá tăng vọt', 'Cầu giảm'],
+      id: 'market_5',
+      question: 'Quy luật giá trị là quy luật kinh tế cơ bản của gì?',
+      options: ['Mọi nền sản xuất', 'Sản xuất hàng hoá', 'Chủ nghĩa tư bản', 'Chủ nghĩa xã hội'],
       answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Cung và Cầu'
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
     },
     {
-      id: 'supply_demand_10',
-      question: 'Yếu tố nào không ảnh hưởng trực tiếp đến cung trong ngắn hạn?',
-      options: ['Công nghệ sản xuất', 'Giá nguyên liệu', 'Sở thích tiêu dùng', 'Thuế sản xuất'],
+      id: 'market_6',
+      question: 'Quy luật giá trị tồn tại trong nền sản xuất nào?',
+      options: ['Nền sản xuất tư bản chủ nghĩa', 'Nền sản xuất xã hội chủ nghĩa', 'Nền sản xuất hàng hóa', 'Mọi nền sản xuất'],
       answer: 2,
-      reward: { chronoCoin: 5 },
-      category: 'Cung và Cầu'
-    },
-
-    // Nhóm 6: Cạnh Tranh và Thị Trường (10 câu)
-    {
-      id: 'competition_1',
-      question: 'Kinh tế thị trường khuyến khích điều gì giữa các doanh nghiệp?',
-      options: ['Độc quyền', 'Cạnh tranh', 'Hợp tác duy nhất', 'Giảm sản xuất'],
-      answer: 1,
-      reward: { matCoin: 5 },
-      category: 'Cạnh Tranh và Thị Trường'
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
     },
     {
-      id: 'competition_2',
-      question: 'Thị trường cạnh tranh hoàn hảo có đặc điểm gì?',
-      options: ['Một nhà cung cấp duy nhất', 'Nhiều nhà cung cấp với sản phẩm giống nhau', 'Giá cố định bởi chính phủ', 'Không có người mua'],
-      answer: 1,
-      reward: { matCoin: 5 },
-      category: 'Cạnh Tranh và Thị Trường'
-    },
-    {
-      id: 'competition_3',
-      question: 'Độc quyền (monopoly) xảy ra khi:',
-      options: ['Nhiều công ty cạnh tranh', 'Một công ty kiểm soát toàn bộ thị trường', 'Giá cả do người tiêu dùng quyết định', 'Cung bằng cầu'],
-      answer: 1,
-      reward: { matCoin: 5 },
-      category: 'Cạnh Tranh và Thị Trường'
-    },
-    {
-      id: 'competition_4',
-      question: 'Trong kinh tế thị trường, "lợi thế cạnh tranh" dựa trên gì?',
-      options: ['Giá cao nhất', 'Sản phẩm/dịch vụ tốt hơn hoặc rẻ hơn', 'Thuế thấp', 'Quy định chính phủ'],
-      answer: 1,
-      reward: { matCoin: 5 },
-      category: 'Cạnh Tranh và Thị Trường'
-    },
-    {
-      id: 'competition_5',
-      question: 'Thị trường oligopoly có đặc điểm gì?',
-      options: ['Một nhà cung cấp', 'Vài nhà cung cấp lớn', 'Nhiều nhà cung cấp nhỏ', 'Không có cạnh tranh'],
-      answer: 1,
-      reward: { matCoin: 5 },
-      category: 'Cạnh Tranh và Thị Trường'
-    },
-    {
-      id: 'competition_6',
-      question: 'Cạnh tranh trong kinh tế thị trường dẫn đến gì?',
-      options: ['Giá cao hơn', 'Đổi mới và hiệu quả', 'Giảm chất lượng', 'Tăng độc quyền'],
-      answer: 1,
-      reward: { matCoin: 5 },
-      category: 'Cạnh Tranh và Thị Trường'
-    },
-    {
-      id: 'competition_7',
-      question: 'Thị trường chứng khoán là nơi gì?',
-      options: ['Mua bán hàng hóa vật lý', 'Mua bán cổ phiếu và trái phiếu', 'Trao đổi tiền ảo', 'Bán vàng'],
-      answer: 1,
-      reward: { matCoin: 5 },
-      category: 'Cạnh Tranh và Thị Trường'
-    },
-    {
-      id: 'competition_8',
-      question: '"Thất bại thị trường" xảy ra khi:',
-      options: ['Giá bằng cung cầu', 'Thị trường không phân bổ tài nguyên hiệu quả', 'Cạnh tranh tăng cao', 'Lợi nhuận đạt tối đa'],
-      answer: 1,
-      reward: { matCoin: 5 },
-      category: 'Cạnh Tranh và Thị Trường'
-    },
-    {
-      id: 'competition_9',
-      question: 'Trong kinh tế thị trường, ai quyết định sản xuất gì?',
-      options: ['Chính phủ', 'Doanh nghiệp dựa trên nhu cầu người tiêu dùng', 'Ngân hàng trung ương', 'Nhà đầu tư nước ngoài'],
-      answer: 1,
-      reward: { matCoin: 5 },
-      category: 'Cạnh Tranh và Thị Trường'
-    },
-    {
-      id: 'competition_10',
-      question: 'Yếu tố nào làm giảm cạnh tranh trong thị trường?',
-      options: ['Nhiều công ty tham gia', 'Rào cản gia nhập cao', 'Giá thấp', 'Sản phẩm đa dạng'],
-      answer: 1,
-      reward: { matCoin: 5 },
-      category: 'Cạnh Tranh và Thị Trường'
-    },
-
-    // Nhóm 7: Lạm Phát và Suy Thoái (10 câu)
-    {
-      id: 'inflation_1',
-      question: 'Lạm phát là gì trong kinh tế thị trường?',
-      options: ['Giá cả giảm liên tục', 'Giá cả tăng liên tục', 'Sản xuất tăng', 'Cầu giảm'],
-      answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Lạm Phát và Suy Thoái'
-    },
-    {
-      id: 'inflation_2',
-      question: 'Lạm phát cao ảnh hưởng thế nào đến tiền tệ?',
-      options: ['Tăng giá trị tiền', 'Giảm sức mua của tiền', 'Không ảnh hưởng', 'Giảm cung tiền'],
-      answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Lạm Phát và Suy Thoái'
-    },
-    {
-      id: 'inflation_3',
-      question: 'Suy thoái kinh tế được định nghĩa bởi:',
-      options: ['Tăng trưởng GDP liên tục', 'Giảm GDP trong 2 quý liên tiếp', 'Giá cả tăng vọt', 'Cạnh tranh giảm'],
-      answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Lạm Phát và Suy Thoái'
-    },
-    {
-      id: 'inflation_4',
-      question: 'Ngân hàng trung ương giảm lãi suất để làm gì?',
-      options: ['Tăng lạm phát', 'Kích thích kinh tế', 'Giảm cung tiền', 'Tăng giá hàng hóa'],
-      answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Lạm Phát và Suy Thoái'
-    },
-    {
-      id: 'inflation_5',
-      question: '"Hyperinflation" xảy ra khi lạm phát đạt mức:',
-      options: ['1-2% mỗi năm', 'Trên 50% mỗi tháng', '10% mỗi quý', 'Không thay đổi'],
-      answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Lạm Phát và Suy Thoái'
-    },
-    {
-      id: 'inflation_6',
-      question: 'Trong suy thoái, điều gì thường tăng?',
-      options: ['Việc làm', 'Thất nghiệp', 'Lạm phát', 'Đầu tư'],
-      answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Lạm Phát và Suy Thoái'
-    },
-    {
-      id: 'inflation_7',
-      question: 'Lạm phát do cầu kéo (demand-pull) xảy ra khi:',
-      options: ['Chi phí sản xuất tăng', 'Người tiêu dùng chi tiêu nhiều hơn cung', 'Chính phủ tăng thuế', 'Cung tiền giảm'],
-      answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Lạm Phát và Suy Thoái'
-    },
-    {
-      id: 'inflation_8',
-      question: 'Chính sách nào giúp kiểm soát lạm phát?',
-      options: ['Giảm lãi suất', 'Tăng lãi suất', 'Giảm thuế', 'Tăng chi tiêu chính phủ'],
-      answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Lạm Phát và Suy Thoái'
-    },
-    {
-      id: 'inflation_9',
-      question: 'Suy thoái kinh tế thường dẫn đến:',
-      options: ['Tăng giá hàng hóa', 'Giảm đầu tư doanh nghiệp', 'Tăng cung tiền', 'Giảm thất nghiệp'],
-      answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Lạm Phát và Suy Thoái'
-    },
-    {
-      id: 'inflation_10',
-      question: '"Stagflation" là gì?',
-      options: ['Lạm phát cao và tăng trưởng kinh tế', 'Lạm phát cao và suy thoái', 'Giá giảm và tăng trưởng', 'Không có lạm phát'],
-      answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Lạm Phát và Suy Thoái'
-    },
-
-    // Nhóm 8: Đầu Tư và Tài Chính Thị Trường (10 câu)
-    {
-      id: 'investment_1',
-      question: 'Trong kinh tế thị trường, "đầu tư" thường nhằm mục đích gì?',
-      options: ['Giảm giá hàng hóa', 'Tạo lợi nhuận trong tương lai', 'Tăng thuế', 'Giảm cầu'],
-      answer: 1,
-      reward: { matCoin: 5 },
-      category: 'Đầu Tư và Tài Chính Thị Trường'
-    },
-    {
-      id: 'investment_2',
-      question: 'Thị trường tài chính giúp gì cho kinh tế?',
-      options: ['Phân bổ vốn hiệu quả', 'Tăng lạm phát', 'Giảm sản xuất', 'Ngăn chặn cạnh tranh'],
+      id: 'market_7',
+      question: 'Quy luật giá trị yêu cầu sản xuất và trao đổi hàng hoá phải tiến hành trên cơ sở nào?',
+      options: ['Hao phí lao động xã hội cần thiết', 'Hao phí lao động cá biệt', 'Hao phí lao động tư nhân', 'Hao phí lao động cụ thể'],
       answer: 0,
-      reward: { matCoin: 5 },
-      category: 'Đầu Tư và Tài Chính Thị Trường'
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
     },
     {
-      id: 'investment_3',
-      question: 'Cổ phiếu đại diện cho gì trong một công ty?',
-      options: ['Nợ của công ty', 'Quyền sở hữu một phần công ty', 'Lợi nhuận cố định', 'Hàng hóa sản xuất'],
-      answer: 1,
-      reward: { matCoin: 5 },
-      category: 'Đầu Tư và Tài Chính Thị Trường'
-    },
-    {
-      id: 'investment_4',
-      question: 'Trái phiếu là gì?',
-      options: ['Quyền sở hữu công ty', 'Khoản vay cho công ty hoặc chính phủ', 'Tiền tệ số', 'Hàng hóa vật lý'],
-      answer: 1,
-      reward: { matCoin: 5 },
-      category: 'Đầu Tư và Tài Chính Thị Trường'
-    },
-    {
-      id: 'investment_5',
-      question: '"Rủi ro đầu tư" liên quan đến điều gì?',
-      options: ['Lợi nhuận cố định', 'Khả năng mất tiền hoặc không đạt lợi nhuận kỳ vọng', 'Giá hàng hóa tăng', 'Cung tăng'],
-      answer: 1,
-      reward: { matCoin: 5 },
-      category: 'Đầu Tư và Tài Chính Thị Trường'
-    },
-    {
-      id: 'investment_6',
-      question: 'Trong kinh tế thị trường, "bong bóng tài chính" là gì?',
-      options: ['Giá tài sản tăng quá cao so với giá trị thực', 'Giá tài sản giảm đột ngột', 'Tăng cung tiền', 'Giảm lạm phát'],
+      id: 'market_8',
+      question: 'Quy luật giá trị yêu cầu người sản xuất phải đảm bảo điều gì?',
+      options: [
+        'Hao phí lao động cá biệt nhỏ hơn hoặc bằng hao phí lao động xã hội cần thiết',
+        'Hao phí lao động cá biệt lớn hơn hao phí lao động xã hội cần thiết',
+        'Hao phí lao động cá biệt nhỏ hơn hao phí lao động xã hội cần thiết',
+        'Hao phí lao động cá biệt bằng hao phí lao động xã hội cần thiết'
+      ],
       answer: 0,
-      reward: { matCoin: 5 },
-      category: 'Đầu Tư và Tài Chính Thị Trường'
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
     },
     {
-      id: 'investment_7',
-      question: 'Quỹ đầu tư mạo hiểm (venture capital) thường đầu tư vào:',
-      options: ['Công ty lớn ổn định', 'Startup công nghệ mới', 'Ngân hàng trung ương', 'Hàng hóa vật lý'],
+      id: 'market_9',
+      question: 'Người sản xuất vi phạm quy luật giá trị trong trường hợp nào?',
+      options: [
+        'Thời gian lao động cá biệt bằng thời gian lao động xã hội cần thiết',
+        'Thời gian lao động cá biệt lớn hơn thời gian lao động xã hội cần thiết',
+        'Thời gian lao động cá biệt nhỏ hơn thời gian lao động xã hội cần thiết',
+        'Thời gian lao động cá biệt lớn hơn hoặc nhỏ hơn thời gian lao động xã hội cần thiết'
+      ],
       answer: 1,
-      reward: { matCoin: 5 },
-      category: 'Đầu Tư và Tài Chính Thị Trường'
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
     },
     {
-      id: 'investment_8',
-      question: '"Lợi nhuận kép" (compound interest) hoạt động thế nào?',
-      options: ['Chỉ tính trên vốn ban đầu', 'Tính lãi trên cả vốn và lãi tích lũy', 'Không tạo lợi nhuận', 'Giảm giá trị đầu tư'],
+      id: 'market_10',
+      question: 'Cơ chế vận động của quy luật giá trị biểu hiện như thế nào?',
+      options: [
+        'Giá cả bằng giá trị hàng hoá',
+        'Giá cả hàng hoá lên xuống xung quanh giá trị hàng hoá',
+        'Cung cầu về hàng hoá',
+        'Do sự cạnh tranh giữa các loại hàng hóa'
+      ],
       answer: 1,
-      reward: { matCoin: 5 },
-      category: 'Đầu Tư và Tài Chính Thị Trường'
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
     },
     {
-      id: 'investment_9',
-      question: 'Thị trường "bull market" là gì?',
-      options: ['Giá tài sản giảm liên tục', 'Giá tài sản tăng liên tục', 'Không có giao dịch', 'Lạm phát tăng'],
-      answer: 1,
-      reward: { matCoin: 5 },
-      category: 'Đầu Tư và Tài Chính Thị Trường'
-    },
-    {
-      id: 'investment_10',
-      question: '"Diversification" trong đầu tư là gì?',
-      options: ['Đầu tư vào một tài sản duy nhất', 'Phân bổ đầu tư vào nhiều tài sản để giảm rủi ro', 'Tăng lãi suất', 'Giảm cung tiền'],
-      answer: 1,
-      reward: { matCoin: 5 },
-      category: 'Đầu Tư và Tài Chính Thị Trường'
-    },
-
-    // Nhóm 9: Chính Sách và Toàn Cầu Hóa (10 câu)
-    {
-      id: 'policy_1',
-      question: 'Trong kinh tế thị trường, chính phủ can thiệp để làm gì?',
-      options: ['Loại bỏ cạnh tranh', 'Sửa thất bại thị trường (như ô nhiễm)', 'Tăng độc quyền', 'Giảm cung'],
-      answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Chính Sách và Toàn Cầu Hóa'
-    },
-    {
-      id: 'policy_2',
-      question: 'Toàn cầu hóa trong kinh tế thị trường dẫn đến gì?',
-      options: ['Giảm thương mại quốc tế', 'Tăng giao thương giữa các quốc gia', 'Giảm cạnh tranh', 'Tăng độc quyền'],
-      answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Chính Sách và Toàn Cầu Hóa'
-    },
-    {
-      id: 'policy_3',
-      question: 'Thuế nhập khẩu cao có thể làm gì?',
-      options: ['Tăng giá hàng hóa nhập khẩu', 'Giảm giá hàng hóa nội địa', 'Tăng lạm phát', 'Giảm đầu tư'],
+      id: 'market_11',
+      question: 'Quy luật cung - cầu là quy luật kinh tế điều tiết quan hệ giữa gì?',
+      options: [
+        'Cung và cầu hàng hoá trên thị trường',
+        'Người bán hàng hoá với nhau',
+        'Các chủ thể sản xuất hàng hoá với nhau',
+        'Người tiêu dùng với nhau'
+      ],
       answer: 0,
-      reward: { chronoCoin: 5 },
-      category: 'Chính Sách và Toàn Cầu Hóa'
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
     },
     {
-      id: 'policy_4',
-      question: '"Tự do thương mại" trong kinh tế thị trường là gì?',
-      options: ['Loại bỏ rào cản thương mại giữa các quốc gia', 'Tăng thuế nhập khẩu', 'Giảm xuất khẩu', 'Tăng độc quyền'],
+      id: 'market_12',
+      question: 'Khi cung = cầu thì giá cả hàng hoá như thế nào?',
+      options: ['Giá cả = giá trị', 'Giá cả > giá trị', 'Giá cả < giá trị', 'Giá cả vận động xoay quanh giá trị'],
       answer: 0,
-      reward: { chronoCoin: 5 },
-      category: 'Chính Sách và Toàn Cầu Hóa'
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
     },
     {
-      id: 'policy_5',
-      question: 'Ngân hàng trung ương điều chỉnh cung tiền để:',
-      options: ['Tăng sản xuất hàng hóa', 'Ổn định kinh tế', 'Giảm cạnh tranh', 'Tăng giá hàng hóa'],
+      id: 'market_13',
+      question: 'Khi cung > cầu thì giá cả như thế nào?',
+      options: ['Giá cả = giá trị', 'Giá cả > giá trị', 'Giá cả < giá trị', 'Giá cả vận động xoay quanh giá trị'],
+      answer: 2,
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
+    },
+    {
+      id: 'market_14',
+      question: 'Giá cả hàng hoá được thể hiện như thế nào khi cung < cầu?',
+      options: ['Giá cả = giá trị', 'Giá cả > giá trị', 'Giá cả < giá trị', 'Giá cả vận động xoay quanh giá trị'],
       answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Chính Sách và Toàn Cầu Hóa'
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
     },
     {
-      id: 'policy_6',
-      question: 'Hiệp định thương mại tự do (FTA) có lợi ích gì?',
-      options: ['Tăng thuế nhập khẩu', 'Giảm chi phí thương mại giữa các nước', 'Giảm xuất khẩu', 'Tăng lạm phát'],
-      answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Chính Sách và Toàn Cầu Hóa'
-    },
-    {
-      id: 'policy_7',
-      question: 'Toàn cầu hóa có thể làm tăng:',
-      options: ['Bất bình đẳng thu nhập', 'Giảm cạnh tranh', 'Tăng độc quyền', 'Giảm đầu tư'],
+      id: 'market_15',
+      question: 'Khi giá cả hàng hoá tăng lên thì cung - cầu sẽ thay đổi như thế nào?',
+      options: ['Cung tăng, cầu giảm', 'Cung giảm, cầu tăng', 'Cung tăng, cầu tăng', 'Cung giảm, cầu giảm'],
       answer: 0,
-      reward: { chronoCoin: 5 },
-      category: 'Chính Sách và Toàn Cầu Hóa'
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
     },
     {
-      id: 'policy_8',
-      question: '"Chính sách tài khóa" liên quan đến gì?',
-      options: ['Điều chỉnh lãi suất', 'Chi tiêu và thuế của chính phủ', 'Tăng cung tiền', 'Giảm sản xuất'],
+      id: 'market_16',
+      question: 'Khi giá cả hàng hoá giảm thì cung cầu sẽ thay đổi như thế nào?',
+      options: ['Cung tăng, cầu giảm', 'Cung giảm, cầu tăng', 'Cung tăng, cầu tăng', 'Cung giảm, cầu giảm'],
       answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Chính Sách và Toàn Cầu Hóa'
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
     },
     {
-      id: 'policy_9',
-      question: 'Kinh tế thị trường toàn cầu phụ thuộc nhiều vào:',
-      options: ['Công nghệ và thương mại', 'Chỉ sản xuất nội địa', 'Giảm giao thương', 'Tăng thuế'],
+      id: 'market_17',
+      question: 'Thực chất của quan hệ cung - cầu là mối quan hệ giữa ai?',
+      options: ['Nhà nước với doanh nghiệp', 'Người mua với người bán', 'Người kinh doanh với nhà nước', 'Doanh nghiệp với doanh nghiệp'],
+      answer: 1,
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
+    },
+    {
+      id: 'market_18',
+      question: 'Quy luật lưu thông tiền tệ xác định gì?',
+      options: [
+        'Lượng tiền tệ cần thiết cho lưu thông trong một thời gian nhất định',
+        'Lượng tiền làm chức năng mua bán',
+        'Lượng tiền làm chức năng cất trữ',
+        'Lượng tiền làm chức năng phương tiện lưu thông'
+      ],
       answer: 0,
-      reward: { chronoCoin: 5 },
-      category: 'Chính Sách và Toàn Cầu Hóa'
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
     },
     {
-      id: 'policy_10',
-      question: '"Rủi ro hệ thống" trong kinh tế thị trường là gì?',
-      options: ['Rủi ro từ một công ty', 'Rủi ro ảnh hưởng toàn bộ thị trường tài chính', 'Giảm giá hàng hóa', 'Tăng cung tiền'],
+      id: 'market_19',
+      question: 'Số lượng tiền cần thiết cho lưu thông hàng hóa được xác định bởi công thức nào?',
+      options: ['M = P.V/Q', 'M = P.Q/V', 'M = Q.V/P', 'M = V.Q/P'],
       answer: 1,
-      reward: { chronoCoin: 5 },
-      category: 'Chính Sách và Toàn Cầu Hóa'
-    }
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
+    },
+    {
+      id: 'market_20',
+      question: 'Mục đích của cạnh tranh là gì?',
+      options: ['Thu được lợi ích tối đa', 'Mua bán hàng hoá với giá cả có lợi nhất', 'Giành các điều kiện sản xuất thuận lợi nhất', 'Sản xuất ra nhiều hàng hoá nhất'],
+      answer: 0,
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
+    },
+    {
+      id: 'market_21',
+      question: 'Cạnh tranh trong nội bộ ngành dựa trên những yếu tố nào?',
+      options: [
+        'Trình độ tay nghề công nhân, trang thiết bị kĩ thuật, công nghệ và phân bố các nguồn lực kinh tế',
+        'Trình độ tay nghề công nhân, đào thải các nhân tố lạc hậu và khả năng tổ chức quản lí',
+        'Trình độ tay nghề công nhân, trang thiết bị kĩ thuật, công nghệ và khả năng tổ chức quản lí',
+        'Trình độ tay nghề công nhân, trang thiết bị kĩ thuật, công nghệ và đào thải các nhân tố lạc hậu'
+      ],
+      answer: 2,
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
+    },
+    {
+      id: 'market_22',
+      question: 'Mục đích của cạnh tranh trong nội bộ ngành là gì?',
+      options: ['Nhằm thu nhiều lợi nhuận nhất', 'Nhằm mua bán hàng hoá với giá cả có lợi nhất', 'Đổi mới công nghệ', 'Thu được lợi nhuận siêu ngạch'],
+      answer: 3,
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
+    },
+    {
+      id: 'market_23',
+      question: 'Kết quả của cạnh tranh trong nội bộ ngành hình thành gì?',
+      options: ['Giá trị thị trường', 'Giá trị hàng hoá', 'Giá trị cá biệt hàng hoá', 'Giá cả thị trường'],
+      answer: 0,
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
+    },
+    {
+      id: 'market_24',
+      question: 'Cạnh tranh giữa các ngành xảy ra khi có sự khác nhau về gì?',
+      options: ['Cung, cầu các loại hàng hoá', 'Lợi nhuận', 'Tỉ suất lợi nhuận', 'Giá trị trao đổi của hàng hoá'],
+      answer: 2,
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
+    },
+    {
+      id: 'market_25',
+      question: 'Cạnh tranh giữa các ngành có mục đích gì?',
+      options: ['Thu nhiều lợi nhuận nhất', 'Nhằm mua bán hàng hoá với giá cả có lợi nhất', 'Đổi mới công nghệ', 'Tìm nơi đầu tư có lợi hơn'],
+      answer: 3,
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
+    },
+    {
+      id: 'market_26',
+      question: 'Kết quả của cạnh tranh giữa các ngành là gì?',
+      options: [
+        'Nhằm thu nhiều lợi nhuận nhất và hình thành tỉ suất lợi nhuận bình quân',
+        'Hình thành tỉ suất lợi nhuận bình quân và tư bản tự do di chuyển nguồn lực từ ngành này sang ngành khác',
+        'Nhằm thu nhiều lợi nhuận nhất và tư bản tự do di chuyển nguồn lực từ ngành này sang ngành khác',
+        'Nhằm thu nhiều lợi nhuận nhất và tự do di chuyển hàng hoá từ ngành này sang ngành khác'
+      ],
+      answer: 1,
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
+    },
+    {
+      id: 'market_27',
+      question: 'Nội dung nào dưới đây thể hiện mặt tích cực của cạnh tranh?',
+      options: ['Bảo vệ môi trường tự nhiên', 'Đa dạng hoá các quan hệ kinh tế', 'Thúc đẩy sự phát triển nền kinh tế thị trường', 'Nâng cao chất lượng cuộc sống'],
+      answer: 2,
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
+    },
+    {
+      id: 'market_28',
+      question: 'Loại cạnh tranh được đánh giá là động lực của nền kinh tế là gì?',
+      options: [
+        'Cạnh tranh trong nội bộ ngành',
+        'Cạnh tranh lành mạnh',
+        'Cạnh tranh giữa các ngành',
+        'Cạnh tranh giữa người bán và người mua, cạnh tranh không lành mạnh'
+      ],
+      answer: 1,
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
+    },
+    {
+      id: 'market_29',
+      question: 'Nguyên nhân dẫn đến cạnh tranh trong sản xuất và lưu thông hàng hoá xuất phát từ đâu?',
+      options: ['Sự tồn tại nhiều chủ sở hữu', 'Sự gia tăng sản xuất hàng hoá', 'Nguồn lao động dồi dào trong xã hội', 'Sự thay đổi cung cầu'],
+      answer: 0,
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
+    },
+    {
+      id: 'market_30',
+      question: 'Để phân biệt cạnh tranh lành mạnh và cạnh tranh không lành mạnh cần dựa vào những tiêu chí nào?',
+      options: ['Tính đạo đức, tính pháp luật', 'Tính truyền thống, tính nhân văn', 'Tính hiện đại, tính pháp luật', 'Tính đạo đức, tính nhân văn'],
+      answer: 0,
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
+    },
+    {
+      id: 'market_31',
+      question: 'Một trong những mặt hạn chế của cạnh tranh là gì?',
+      options: ['Làm cho cung lớn hơn cầu', 'Gây tổn hại đến môi trường kinh doanh', 'Tiền giấy khan hiếm trên thị trường', 'Gây ra hiện tượng lạm phát'],
+      answer: 1,
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
+    },
+    {
+      id: 'market_32',
+      question: 'Mạng di động A khuyến mãi giảm 50% giá trị thẻ nạp, một tuần sau mạng di động B và C cũng đưa ra chương trình khuyến mãi tương tự. Hiện tượng này phản ánh quy luật nào của thị trường?',
+      options: ['Quy luật cung - cầu', 'Quy luật cạnh tranh', 'Quy luật lưu thông tiền tệ', 'Quy luật giá trị'],
+      answer: 1,
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
+    },
+    {
+      id: 'market_33',
+      question: 'Quy luật giá trị là gì?',
+      options: [
+        'Quy luật riêng của CNTB',
+        'Quy luật cơ bản của sản xuất và trao đổi hàng hoá',
+        'Quy luật kinh tế chung của mọi xã hội',
+        'Quy luật kinh tế của thời kỳ quá độ lên CNXH'
+      ],
+      answer: 1,
+      reward: { chronoCoin: 5, matCoin: 5 },
+      category: 'Kinh tế thị trường'
+    },
   ];
 
   // Tạo particle effect
